@@ -1,6 +1,9 @@
-const express = require ("express");
-const server = express();
-const morgan = require("morgan");
+const server = require("./src/app");
+const PORT = 3001;
 
-server.use(express.json());
-server.use(morgan("dev"));
+
+server.listen(PORT,()=>{
+    console.log("We are in port "+ PORT)
+})
+
+
