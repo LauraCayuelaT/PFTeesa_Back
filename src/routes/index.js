@@ -1,8 +1,12 @@
 const { Router } = require("express");
 const router = Router();
+const addProducts = require("../Controllers/addProducts");
+const getAllProducts = require("../Controllers/getAllProducts")
 
-router.get("/home",(req,res)=>{
-    res.status(200).json({msg: "OK"})
-})
+// TRAE TODOS LOS PRODUCTOS DE LA BASE DE DATOS
+router.get("/products", getAllProducts)
 
-module.exports = router;
+//AGREGA NUEVOS PRODUCTOS A LA BASE DE DATOSÍ
+router.post("/products", addProducts)
+
+module.exports = router;   

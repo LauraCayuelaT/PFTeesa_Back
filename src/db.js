@@ -7,8 +7,8 @@ const ProductModel=require("./models/Product")
 const PurchasedModel=require("./models/Purchased")
 const PurchasedProductModel=require("./models/PurchasedProduct")
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY } = process.env;
-
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, BD } = process.env;
+// PARA DEPLOY
 const sequelize = new Sequelize(
    DB_DEPLOY,
    {
@@ -21,6 +21,14 @@ const sequelize = new Sequelize(
       }
    }
 )
+
+// const sequelize = new Sequelize(
+//    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${BD}`,
+//    {
+//       logging: false, 
+//       native: false
+//    }
+// )
 
 UserModel(sequelize);
 ProductModel(sequelize);
@@ -45,5 +53,5 @@ PurchasedProduct.belongsTo(Product)
 
 
 module.exports = {
-    sequelize
+    sequelize, ...sequelize.models
 }
