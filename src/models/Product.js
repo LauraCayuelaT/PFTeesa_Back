@@ -12,12 +12,15 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+    descripcion:{
+      type: DataTypes.TEXT
+    },
     tipo: {
         type: DataTypes.STRING,
         allowNull: false,
       },
     caracteristicas: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
     categoria:{
@@ -25,20 +28,22 @@ module.exports = (sequelize) => {
         allowNull:false
     },
     imagen: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
     precio: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
     stock:{
-        type:DataTypes.INTEGER,
-        allowNull:false
+        type:DataTypes.INTEGER
     },
     marca: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    ref: {
+      type: DataTypes.STRING
     }
   }, {timestamps: false});
 };
