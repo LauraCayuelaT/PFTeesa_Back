@@ -28,11 +28,14 @@ module.exports = (sequelize) => {
         allowNull:false
     },
     imagen: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
+        validate:{
+          isUrl:true
+        }
       },
     precio: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
     stock:{
