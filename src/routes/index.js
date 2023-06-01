@@ -5,6 +5,7 @@ const getAllProducts = require("../Controllers/getAllProducts")
 const getDetail= require ("../Controllers/getDetail")
 const deleteProduct= require ("../Controllers/deleteProduct")
 const updateProduct= require ("../Controllers/updateProduct")
+const getBrands=require("../Controllers/getBrands")
 
 // TRAE TODOS LOS PRODUCTOS DE LA BASE DE DATOS
 router.get("/products", getAllProducts)
@@ -20,5 +21,7 @@ router.delete("/products/:idProduct",deleteProduct)
 
 //MODIFICA LOS VALORES DE UN PRODUCTO GUARDADO
 router.put("/detail/:idProduct",updateProduct)
+
+router.get("/brands", getBrands)
 
 module.exports = router;   

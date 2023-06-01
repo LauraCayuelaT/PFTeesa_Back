@@ -50,6 +50,7 @@ module.exports = (sequelize) => {
     },
     estado:{
       type:DataTypes.STRING
+
     }
   }, {timestamps: false});
 };
