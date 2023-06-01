@@ -3,7 +3,7 @@ const cloudinary = require("../utils/cloudinary");
 
 const addProducts= async (req,res)=>{
 
-    const { nombre, tipo, caracteristicas, categoria, imagen, precio, stock, marca, descripcion, ref } = req.body;
+    const { nombre, tipo, caracteristicas, categoria, imagen, precio, stock, marca, descripcion, ref, estado } = req.body;
         
 
     if(!nombre || !imagen || !precio || !marca || !ref) return res.status(404).json({message: "Faltan datos"})
@@ -19,7 +19,7 @@ const addProducts= async (req,res)=>{
           });
           const imageUrl = cloudinaryResponse.secure_url;
 
-    const newProduct = await Product.create({nombre, tipo, caracteristicas, categoria, imagen:imageUrl, precio, stock, marca, descripcion, ref})
+    const newProduct = await Product.create({nombre, tipo, caracteristicas, categoria, imagen:imageUrl, precio, stock, marca, descripcion, ref, estado})
     
 
     res.status(200).json(newProduct)
