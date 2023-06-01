@@ -1,11 +1,11 @@
 {
   "development": {
-    "username": "db_teesa_user",
-    "password": "VXEomsLCJ21abIkB7fTAqR2QCAkYHPqv",
-    "database": "db_teesa ",
-    "host": "dpg-chr1931mbg5e1f6mqt2g-a",
+    "username": "postgres",
+    "password": "HAwKCA9BD4ULl8UL5iI5",
+    "database": "railway",
+    "host": "containers-us-west-149.railway.app",
     "dialect": "postgres"
-  },
+  },  
   "test": {
     "username": "root",
     "password": null,
