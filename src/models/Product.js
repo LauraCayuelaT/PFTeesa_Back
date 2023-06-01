@@ -47,6 +47,9 @@ module.exports = (sequelize) => {
     },
     ref: {
       type: DataTypes.STRING
+    },
+    estado: {
+      type: DataTypes.STRING
     }
   }, {timestamps: false});
 };
