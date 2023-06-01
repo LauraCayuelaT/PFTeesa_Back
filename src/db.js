@@ -7,18 +7,28 @@ const ProductModel=require("./models/Product")
 const PurchasedModel=require("./models/Purchased")
 const PurchasedProductModel=require("./models/PurchasedProduct")
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, BD } = process.env;
-// PARA DEPLOY
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, BD, DB_DEPLOYRAIL } = process.env;
+// PARA DEPLOY CON RENDER
+// const sequelize = new Sequelize(
+//    DB_DEPLOY,
+//    {
+//       logging: false, 
+//       native: false, 
+//       dialectOptions: {
+//          ssl: {
+//             require: true
+//          }
+//       }
+//    }
+// )
+
+// PARA DEPLOY CON RAILWAY
 const sequelize = new Sequelize(
-   DB_DEPLOY,
+   DB_DEPLOYRAIL,
    {
       logging: false, 
       native: false, 
-      dialectOptions: {
-         ssl: {
-            require: true
-         }
-      }
+      
    }
 )
 
