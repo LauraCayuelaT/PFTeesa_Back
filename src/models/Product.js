@@ -48,8 +48,14 @@ module.exports = (sequelize) => {
     ref: {
       type: DataTypes.STRING
     },
+<<<<<<< HEAD
+    estado:{
+      type:DataTypes.STRING
+
+=======
     estado: {
       type: DataTypes.STRING
+>>>>>>> main
     }
   }, {timestamps: false});
 };
