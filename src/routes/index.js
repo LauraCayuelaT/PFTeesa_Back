@@ -22,6 +22,6 @@ router.delete("/products/:idProduct",deleteProduct)
 //MODIFICA LOS VALORES DE UN PRODUCTO GUARDADO
 router.put("/detail/:idProduct",updateProduct)
 
-router.get("    ", getBrands)
+router.get("/brands", getBrands)
 
 module.exports = router;   
