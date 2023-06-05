@@ -42,7 +42,7 @@ const getAllProducts = async(req,res)=>{
               };
         }
         const offset = (page - 1) * limit;
-        const totalCount = await Product.count({ where: condiciones });
+        const total = await Product.count({ where: condiciones });
     
         const allProducts = await Product.findAll({
           where: condiciones,

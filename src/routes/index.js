@@ -22,7 +22,7 @@ router.delete("/products/:idProduct",deleteProduct)
 //MODIFICA LOS VALORES DE UN PRODUCTO GUARDADO
 router.put("/detail/:idProduct",updateProduct)
 
-//TRAE LAS DIFERENTES MARCAS
+//TRAE TODAS LAS MARCAS 
 router.get("/brands", getBrands)
 
 module.exports = router;   
