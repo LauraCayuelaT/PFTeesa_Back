@@ -6,7 +6,7 @@ const updateProduct=async(req,res)=>{
     const {idProduct}=req.params
     if(!uuidRegExp.test(idProduct)) return res.status(400).json({message: "Id invalido"}) //Validacion de uuid
 
-    const { nombre, tipo, caracteristicas, categoria, imagen, precio, stock, marca, descripcion, ref } = req.body;
+    const { nombre, tipo, caracteristicas, categoria, imagen, precio, stock, marca, descripcion, ref, estado } = req.body;
 
     try {
         const product= await Product.findOne({ where: { id: idProduct } });
@@ -22,6 +22,7 @@ const updateProduct=async(req,res)=>{
             product.marca = marca;
             product.descripcion = descripcion;
             product.ref = ref;
+            product.estado = estado;
             const updatedProduct = await product.save();
             res.status(200).json(updatedProduct)
         }else{

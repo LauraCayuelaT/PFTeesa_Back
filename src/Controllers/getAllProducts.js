@@ -10,9 +10,14 @@ const getAllProducts = async(req,res)=>{
         
         const condiciones={}
         if(nombre){
-            condiciones.nombre = {
-                [Op.iLike]: `%${nombre}%`
-              };
+            // condiciones.nombre = {
+            //     [Op.iLike]: `%${nombre}%`
+            //   };
+            condiciones[Op.or] = [
+                { nombre: { [Op.iLike]: `%${nombre}%` } },
+                { descripcion: { [Op.iLike]: `%${nombre}%` } },
+                { caracteristicas: { [Op.iLike]: `%${nombre}%` } }
+            ];
         }
         if(tipo){
             condiciones.tipo = {
