@@ -5,7 +5,7 @@ const getAllProducts = async(req,res)=>{
 
     try{
 
-        const {nombre,tipo,estado}=req.query
+        const {nombre,tipo,estado,marca}=req.query
         let {precioMinimo,precioMaximo}=req.query
         
         const condiciones={}
@@ -29,6 +29,11 @@ const getAllProducts = async(req,res)=>{
         if(estado){
             condiciones.estado = {
                 [Op.iLike]: `%${estado}%`
+              };
+        }
+        if(marca){
+            condiciones.marca = {
+                [Op.iLike]: `%${marca}%`
               };
         }
            
