@@ -4,12 +4,12 @@ const { Op } = require('sequelize');
 const getAllProducts = async(req,res)=>{
 
     try{
-
-        const {nombre,tipo,estado,marca}=req.query
+        const {nombre,tipo,estado,marca, page = 1, limit = 6}=req.query
         let {precioMinimo,precioMaximo}=req.query
-        
+
         const condiciones={}
-        if(nombre){
+        
+         if(nombre){
             // condiciones.nombre = {
             //     [Op.iLike]: `%${nombre}%`
             //   };
@@ -41,11 +41,15 @@ const getAllProducts = async(req,res)=>{
                 [Op.iLike]: `%${marca}%`
               };
         }
-           
-        
+        const offset = (page - 1) * limit;
+        const totalCount = await Product.count({ where: condiciones });
+    
         const allProducts = await Product.findAll({
-            where:condiciones
+          where: condiciones,
+          offset,
+          limit
         });
+        
 
         res.status(201).json(allProducts)
      
