@@ -5,14 +5,19 @@ const getAllProducts = async(req,res)=>{
 
     try{
 
-        const {nombre,tipo,estado}=req.query
+        const {nombre,tipo,estado,marca}=req.query
         let {precioMinimo,precioMaximo}=req.query
         
         const condiciones={}
         if(nombre){
-            condiciones.nombre = {
-                [Op.iLike]: `%${nombre}%`
-              };
+            // condiciones.nombre = {
+            //     [Op.iLike]: `%${nombre}%`
+            //   };
+            condiciones[Op.or] = [
+                { nombre: { [Op.iLike]: `%${nombre}%` } },
+                { descripcion: { [Op.iLike]: `%${nombre}%` } },
+                { caracteristicas: { [Op.iLike]: `%${nombre}%` } }
+            ];
         }
         if(tipo){
             condiciones.tipo = {
@@ -29,6 +34,11 @@ const getAllProducts = async(req,res)=>{
         if(estado){
             condiciones.estado = {
                 [Op.iLike]: `%${estado}%`
+              };
+        }
+        if(marca){
+            condiciones.marca = {
+                [Op.iLike]: `%${marca}%`
               };
         }
            
