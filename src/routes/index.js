@@ -8,6 +8,7 @@ const updateProduct= require ("../Controllers/updateProduct")
 const getBrands=require("../Controllers/getBrands")
 const addUser=require("../Controllers/addUser")
 const getAllUsers=require("../Controllers/getAllUsers")
+const loginUser=require("../Controllers/loginUser")
 
 // TRAE TODOS LOS PRODUCTOS DE LA BASE DE DATOS
 router.get("/products", getAllProducts)
@@ -29,6 +30,9 @@ router.get("/brands", getBrands)
 
 //CREAR UN USUARIO
 router.post("/user",addUser)
+
+//lOGEAR USUARIO
+router.get("/user",loginUser)
 
 //Traer todos los usuarios
 router.get("/users",getAllUsers)
