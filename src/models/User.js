@@ -27,6 +27,7 @@ module.exports = (sequelize) => {
     correo: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique:true
     },
     contraseña: {
       type: DataTypes.STRING,
