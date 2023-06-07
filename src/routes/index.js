@@ -29,10 +29,10 @@ router.put("/detail/:idProduct",updateProduct)
 router.get("/brands", getBrands)
 
 //CREAR UN USUARIO
-router.post("/user",addUser)
+router.post("/singUp",addUser)
 
 //lOGEAR USUARIO
-router.get("/user",loginUser)
+router.get("/login",loginUser)
 
 //Traer todos los usuarios
 router.get("/users",getAllUsers)
