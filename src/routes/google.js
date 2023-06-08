@@ -31,7 +31,7 @@ googleRouter.get('/callback', (req, res, next) => {
             return res.redirect('https://pf-teesa-front.vercel.app/login'); //definir con el front que ruta vamos a mostrar para decirle al cliente que ya existe
           }
   
-          User.create({ nombre: displayName, correo: emails[0].value, googleToken: accessToken, refreshToken, tipo: false })
+          User.create({ nombre: displayName, correo: emails[0].value, googleToken: accessToken, refreshToken, tipo: "usuario" })
             .then(newUser => {
               req.session.destroy();
               res.redirect('https://pf-teesa-front.vercel.app/login');
