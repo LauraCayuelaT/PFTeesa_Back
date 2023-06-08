@@ -2,17 +2,20 @@ const express = require ("express");
 const morgan = require("morgan");
 const routes = require("./routes/index")
 const server = express();
+const session = require("express-session");
 const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
+require("./auth")
 
-passport.use(new GoogleStrategy({
-  clientID: "871749157700-dld0sob8qo0p9jranhb3misppo3g9gav.apps.googleusercontent.com",
-  clientSecret: "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",
-  callbackURL: "https://accounts.google.com/o/oauth2/auth"
-}, (accessToken, refreshToken, profile, done)=>{
-  
-}
-))
+
+// server.use(session({
+//   secret: 'proyectoTeesa',
+//   resave: false,
+//   saveUninitialized: false
+// }));;
+// server.use(passport.initialize());
+// server.use(passport.session());
+
+
 
 server.use(express.json());
 server.use(morgan("dev"));
@@ -23,6 +26,9 @@ server.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
   });
+
+
+
   
 server.use("/", routes);
 
