@@ -6,7 +6,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const googleStrategySignup = new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL:"http://localhost:3001/google/callback"
+    callbackURL:"https://servidor-teesa.onrender.com/google/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     
@@ -18,7 +18,7 @@ const googleStrategySignup = new GoogleStrategy({
 const googleStrategyLogin= new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3001/auth/google/callback"
+    callbackURL: "https://servidor-teesa.onrender.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     
