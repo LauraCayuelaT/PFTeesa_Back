@@ -6,10 +6,24 @@ const getDetail= require ("../Controllers/getDetail");
 const deleteProduct= require ("../Controllers/deleteProduct");
 const updateProduct= require ("../Controllers/updateProduct");
 const getBrands=require("../Controllers/getBrands");
-const signUpGoogleRouter = require("./signUpGoogle");
+const googleRouter = require("./google");
+const googleLoginRouter = require("./googleLoginRouter")
 const addUser=require("../Controllers/addUser");
 const getAllUsers=require("../Controllers/getAllUsers");
 const loginUser=require("../Controllers/loginUser");
+const session = require("express-session");
+const passport = require("passport");
+const flash = require("express-flash");
+require("../auth")
+
+router.use(flash())         
+router.use(session({
+      secret: 'proyectoTeesa',
+      resave: false,
+      saveUninitialized: false
+    }));;
+router.use(passport.initialize());
+router.use(passport.session());
 
 // TRAE TODOS LOS PRODUCTOS DE LA BASE DE DATOS
 router.get("/products", getAllProducts)
@@ -30,7 +44,7 @@ router.put("/detail/:idProduct",updateProduct)
 router.get("/brands", getBrands)
 
 //CREAR UN USUARIO
-router.post("/singUp",addUser)
+router.post("/singup",addUser)
 
 //lOGEAR USUARIO
 router.get("/login",loginUser)
@@ -44,7 +58,11 @@ router.get("/users",getAllUsers)
 // SIGN UP GOOGLE
 
 
-router.use("/google", signUpGoogleRouter);
+router.use("/google", googleRouter);
+
+//LOGIN
+
+router.use("/auth/google", googleLoginRouter);
 
 
 
