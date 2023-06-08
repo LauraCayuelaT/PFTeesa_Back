@@ -49,12 +49,22 @@ const getAllProducts = async(req,res)=>{
           offset,
           limit
         });
+        const totalPages = Math.ceil(totalCount / limit);
+        const NextPage = page < totalPages;
+        const PreviousPage = page > 1;
+        const response = {
+            totalPages: totalPages,
+            itemsPerPage: limit,
+            totalItems: totalCount,
+            currentPageItems: allProducts.length,
+            NextPage: NextPage,
+            PreviousPage: PreviousPage,
+            products: allProducts, 
+
+        };
         
 
-        res.status(201).json(allProducts)
-     
-
-        
+        res.status(201).json(response)
     }
     catch(err){res.status(404).json({message: "Catch de getAllProducts "+err.message})}
 }

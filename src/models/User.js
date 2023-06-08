@@ -25,10 +25,12 @@ module.exports = (sequelize) => {
     correo: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique:true
     },
     contrasena: {
-      type: DataTypes.STRING
-    },
+      type: DataTypes.STRING },
+
+
     tipo:{
       type:DataTypes.BOOLEAN,
       allowNull:false
