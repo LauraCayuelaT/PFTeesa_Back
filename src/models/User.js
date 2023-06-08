@@ -13,16 +13,14 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     direccion: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.STRING
     },
     telefono: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.STRING
+      
     },
     nit: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      type: DataTypes.INTEGER
     },
     correo: {
       type: DataTypes.STRING,
@@ -30,12 +28,18 @@ module.exports = (sequelize) => {
       unique:true
     },
     contrasena: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+      type: DataTypes.STRING },
+
+
     tipo:{
       type:DataTypes.BOOLEAN,
       allowNull:false
+    },
+    googleToken:{
+      type: DataTypes.STRING
+    },
+    refreshToken:{
+      type: DataTypes.STRING
     }
   }, {timestamps: false});
 };

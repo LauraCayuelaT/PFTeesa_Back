@@ -1,14 +1,15 @@
 const { Router } = require("express");
 const router = Router();
 const addProducts = require("../Controllers/addProducts");
-const getAllProducts = require("../Controllers/getAllProducts")
-const getDetail= require ("../Controllers/getDetail")
-const deleteProduct= require ("../Controllers/deleteProduct")
-const updateProduct= require ("../Controllers/updateProduct")
-const getBrands=require("../Controllers/getBrands")
-const addUser=require("../Controllers/addUser")
-const getAllUsers=require("../Controllers/getAllUsers")
-const loginUser=require("../Controllers/loginUser")
+const getAllProducts = require("../Controllers/getAllProducts");
+const getDetail= require ("../Controllers/getDetail");
+const deleteProduct= require ("../Controllers/deleteProduct");
+const updateProduct= require ("../Controllers/updateProduct");
+const getBrands=require("../Controllers/getBrands");
+const signUpGoogleRouter = require("./signUpGoogle");
+const addUser=require("../Controllers/addUser");
+const getAllUsers=require("../Controllers/getAllUsers");
+const loginUser=require("../Controllers/loginUser");
 
 // TRAE TODOS LOS PRODUCTOS DE LA BASE DE DATOS
 router.get("/products", getAllProducts)
@@ -37,4 +38,21 @@ router.get("/login",loginUser)
 //Traer todos los usuarios
 router.get("/users",getAllUsers)
 
-module.exports = router;   
+
+
+
+// SIGN UP GOOGLE
+
+
+router.use("/google", signUpGoogleRouter);
+
+
+
+
+
+
+module.exports = router;
+
+
+
+

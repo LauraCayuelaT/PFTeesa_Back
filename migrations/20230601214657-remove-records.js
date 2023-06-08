@@ -4,7 +4,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     // Elimina los registros existentes en la tabla "Users"
-    await queryInterface.bulkDelete('Products', null, {});
+    // await queryInterface.bulkDelete('Products', null, {});
   },
 
   down: async (queryInterface, Sequelize) => {
