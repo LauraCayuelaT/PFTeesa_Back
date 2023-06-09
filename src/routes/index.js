@@ -49,7 +49,7 @@ router.put("/detail/:idProduct",updateProduct)
 router.get("/brands", getBrands)
 
 //CREAR UN USUARIO
-router.post("/singup",addUser)
+router.post("/signup",addUser)
 
 //lOGEAR USUARIO
 router.get("/login",loginUser)

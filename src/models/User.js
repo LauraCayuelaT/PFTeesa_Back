@@ -32,7 +32,7 @@ module.exports = (sequelize) => {
 
 
     tipo:{
-      type:DataTypes.ENUM('admin','usuario'),
+      type:DataTypes.BOOLEAN,
       allowNull:false
     },
     googleToken:{
