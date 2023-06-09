@@ -8,7 +8,7 @@ const { Op } = require('sequelize');
 const addUser=async(req,res)=>{
 
     try {
-        const{nombre,direccion,telefono,nit,correo,contrasena,tipo}= req.body
+        const{nombre,direccion,telefono,nit,correo,contrasena,tipo='usuario'}= req.body
     
         if (!emailRegex.test(correo)) {
             return res.status(404).json({message:"Correo invalido"})
