@@ -11,6 +11,10 @@ const googleLoginRouter = require("./googleLoginRouter")
 const addUser=require("../Controllers/addUser");
 const getAllUsers=require("../Controllers/getAllUsers");
 const loginUser=require("../Controllers/loginUser");
+
+const loginCheck=require ("../Controllers/loginCheck")
+const tokenCheck=require("./tokenCheck")
+
 const session = require("express-session");
 const passport = require("passport");
 const flash = require("express-flash");
@@ -24,6 +28,7 @@ router.use(session({
     }));;
 router.use(passport.initialize());
 router.use(passport.session());
+ 
 
 // TRAE TODOS LOS PRODUCTOS DE LA BASE DE DATOS
 router.get("/products", getAllProducts)
@@ -52,8 +57,8 @@ router.get("/login",loginUser)
 //Traer todos los usuarios
 router.get("/users",getAllUsers)
 
-
-
+//Routa protegida para pruebas del token
+router.get("/loginCheck",tokenCheck,loginCheck)
 
 // SIGN UP GOOGLE
 

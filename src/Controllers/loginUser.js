@@ -2,9 +2,12 @@ const bcryptjs=require('bcryptjs')
 
 const { User } = require("../db");
 const { Op } = require('sequelize');
+const jwt= require('jsonwebtoken');
+const secret=process.env.SECRET
 
 const loginUser=async(req,res)=>{
 
+    try {
     const{correo,contrasena}=req.body
 
     if(!correo || !contrasena) return res.status(400).json({message:"Faltan datos"})
@@ -19,7 +22,20 @@ const loginUser=async(req,res)=>{
 
     if(!compare) return res.status(404).json({message:`Credenciales invalidas`})
 
-    return res.status(200).json({message:"Logeo exitoso"})
+    const token=jwt.sign({
+        sub:usuario.id,
+        nombre:usuario.nombre,
+        exp:Date.now()+60*1000,
+        tipo:usuario.tipo
+    },secret)
+
+    return res.status(200).json({token})
+
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
+//
+    
 
 }
 
