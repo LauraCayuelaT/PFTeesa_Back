@@ -63,8 +63,6 @@ const getAllProducts = async(req,res)=>{
 
         };
         
-        
-        //res.redirect('/login')
         res.status(201).json(response)
     }
     catch(err){res.status(404).json({message: "Catch de getAllProducts "+err.message})}

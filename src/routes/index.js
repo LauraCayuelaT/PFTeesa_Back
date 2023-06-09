@@ -52,7 +52,7 @@ router.get("/brands", getBrands)
 router.post("/signup",addUser)
 
 //lOGEAR USUARIO
-router.get("/login",loginUser)
+router.post("/login",loginUser)
 
 //Traer todos los usuarios
 router.get("/users",getAllUsers)
