@@ -9,39 +9,48 @@ const passport = require("passport");
 
 googleLoginRouter.get("/login", passport.authenticate("google-login", {scope: ['email','profile']}))
 
-googleLoginRouter.get('/callback', (req, res, next) => {
-    passport.authenticate('google-login', { failureRedirect: 'https://pf-teesa-front.vercel.app/login', failureFlash: true }, (err, user) => {
+googleLoginRouter.get('/callback', passport.authenticate('google-login', { failureRedirect: 'https://pf-teesa-front.vercel.app/login', failureFlash: true }),async (req,res,next)=>{
+  if (req.authError) {
+    req.flash('error', req.authError);
+    return res.redirect('https://pf-teesa-front.vercel.app/login');
+  }
+
+  const { emails } = req.user;
+
+  const existingUser = User.findOne({ where: { correo: emails[0].value } });
+  try{
+  if(existingUser){
+    const userData = {
+      correo: existingUser.correo,
+      nombre: existingUser.nombre,
+    };
+    const queryParams = new URLSearchParams(userData).toString();
+    const redirectUrl = `https://pf-teesa-front.vercel.app/home?${queryParams}`;
     
-    if (err) {
-        console.error('Error en la autenticación de Google:', err);
-        return res.redirect('https://pf-teesa-front.vercel.app/login');
+
+
+    req.login(existingUser, err => {
+      if (err) {
+        console.error('Error al iniciar sesión:', err);
+        return next(err);
       }
-      if (!user) {
-        req.session.errorMessage = 'Error en la autenticación de Google';
-        return res.redirect('https://pf-teesa-front.vercel.app/login');
-      }
-  
-      const { emails} = user;
-      console.log(emails[0].value)
-      User.findOne({ where: { correo: emails[0].value } })
-        .then(existingUser => {
-          
-          if (existingUser!==null) {
-            return res.redirect('https://pf-teesa-front.vercel.app/home'); 
-          }
-          else{
-            req.session.errorMessage = "Usuario no registrado"
-            req.session.destroy();
-            res.redirect('https://pf-teesa-front.vercel.app/signup')
-          }
-         
-        })
-        .catch(error => {
-          console.error('Error al buscar un usuario existente:', error);
-          next();
-        });
-    })(req, res, next);
-  });
+      return res.redirect(redirectUrl);;
+    });
+    } else {
+    // Usuario no existente, redirigir a la página de registro o mostrar un mensaje de error
+    req.flash('error', 'Usuario no registrado');
+    return res.redirect('https://pf-teesa-front.vercel.app/signup');
+    }
+
+  }
+  catch(err){console.error('Error al buscar un usuario existente:', err);
+                return next(err)}
+
+})
+
+
+
+
 
   googleLoginRouter.get('/api/getErrorMessage', (req, res) => {
     const errorMessage = req.session.errorMessage || '';
