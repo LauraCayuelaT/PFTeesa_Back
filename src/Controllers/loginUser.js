@@ -18,6 +18,8 @@ const loginUser=async(req,res)=>{
 
     if(!usuario) return res.status(404).json({message:`El correo ${correo} no esta registrado`})
 
+    if(!usuario.contrasena) return res.status(404).json({message:`El correo ${correo} fue registrado con Google`})
+
     const compare= await bcryptjs.compare(contrasena,usuario.contrasena)
 
     if(!compare) return res.status(404).json({message:`Credenciales invalidas`})
