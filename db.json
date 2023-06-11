@@ -1,142 +1,519 @@
 [
     {
-    "id": "ec4bf120-eb3e-46fa-9f44-4a9a4e9fc7c4",
-    "nombre": "Cheftop Mind.Maps Countertop plus",
-    "descripcion": "Cheftop Mind.Maps PLUS es el horno combinado inteligente que asa, fríe, a la parrilla, dora, ahuma, cocina con vapor y mucho más. Ciclos de cocción atuomáticos y funciones inteligentes para resultados siempre impecables",
-    "tipo": "Equipo",
-    "caracteristicas": "Bandejas: 5 bandejas GN 1/1 Alimentacion: gas Ancho: 750 mm Profundidad: 783 mm Altura: 675 mm Peso: 83 kg Voltaje: 220-240v 1N Frecuencia: 50 Hz Potencia nominal gas : 15 Consumo en kWh: 24,6 kWh/dia",
-    "categoria": "Horno",
-    "imagen": "https://res.cloudinary.com/dbth9b3ta/image/upload/v1685645474/products/y0pvnzj1yewa1ryy7kve.png",
-    "precio": 29925000,
-    "stock": 0,
-    "marca": "Unox",
-    "ref": "XEVC-0511-GPRM",
-    "estado": "nuevo"
+      "id": "c19d9e55-aa38-453f-ab3e-79bb9fd64e2d",
+      "nombre": "Cheftop Mind.Maps Countertop plus",
+      "descripcion": "Cheftop Mind.Maps PLUS es el horno combinado inteligente que asa, fríe, a la parrilla, dora, ahuma, cocina con vapor y mucho más. Ciclos de cocción atuomáticos y funciones inteligentes para resultados siempre impecables",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 5 bandejas GN 1/1 Alimentacion: gas Ancho: 750 mm Profundidad: 783 mm Altura: 675 mm Peso: 83 kg Voltaje: 220-240v 1N Frecuencia: 50 Hz Potencia nominal gas : 15 Consumo en kWh: 24,6 kWh/dia",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686428577/products/v48dbhhsdzbp16k5n0qt.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686428579/products/aec71kln7urvslmfwqcu.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686428581/products/v5da0jyitxzppxgkt3zc.png"
+      ],
+      "precio": 29925000,
+      "stock": 0,
+      "marca": "Unox",
+      "ref": "XEVC-0511-GPRM", 
+      "estado":"nuevo"
     },
     {
-    "id": "2e0eac4c-aec4-447e-b5f0-0a03655879c7",
-    "nombre": "Cheftop Mind.Maps Countertop plus",
-    "descripcion": "Cheftop Mind.Maps PLUS es el horno combinado inteligente que asa, fríe, a la parrilla, dora, ahuma, cocina con vapor y mucho más. Ciclos de cocción atuomáticos y funciones inteligentes para resultados siempre impecables",
-    "tipo": "Equipo",
-    "caracteristicas": "Bandejas: 7 bandejas GN 1/1 Alimentacion: gas Ancho: 750 mm Profundidad: 783 mm Altura: 843 mm Peso: 104 kg Voltaje: 220-240v 1N Frecuencia: 50 Hz Potencia nominal gas : 19 Consumo en kWh: 33,7 kWh/dia",
-    "categoria": "Horno",
-    "imagen": "https://res.cloudinary.com/dbth9b3ta/image/upload/v1685645503/products/kbihnbytuu4vxjnsfade.png",
-    "precio": 38700000,
-    "stock": 0,
-    "marca": "Rational",
-    "ref": "XEVC-0711-GPRM",
-    "estado": "nuevo"
+      "id": "40b44268-6042-43c7-83bf-2046a5168d9f",
+      "nombre": "Cheftop Mind.Maps Countertop plus",
+      "descripcion": "Cheftop Mind.Maps PLUS es el horno combinado inteligente que asa, fríe, a la parrilla, dora, ahuma, cocina con vapor y mucho más. Ciclos de cocción atuomáticos y funciones inteligentes para resultados siempre impecables",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 7 bandejas GN 1/1 Alimentacion: gas Ancho: 750 mm Profundidad: 783 mm Altura: 843 mm Peso: 104 kg Voltaje: 220-240v 1N Frecuencia: 50 Hz Potencia nominal gas : 19 Consumo en kWh: 33,7 kWh/dia",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686429786/products/exiffahuqffgzmb3vlpj.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686429788/products/zdtxdprddi9qg3z0bmrr.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686429789/products/v1iqw4zuxr0op4wovjju.png"
+      ],
+      "precio": 38700000,
+      "stock": 0,
+      "marca": "Rational",
+      "ref": "XEVC-0711-GPRM",
+      "estado":"nuevo"
     },
     {
-    "id": "551861ae-20e7-44e3-816d-827850bc2cfb",
-    "nombre": "Cheftop Mind.Maps Countertop plus",
-    "descripcion": "Cheftop Mind.Maps PLUS es el horno combinado inteligente que asa, fríe, a la parrilla, dora, ahuma, cocina con vapor y mucho más. Ciclos de cocción atuomáticos y funciones inteligentes para resultados siempre impecables",
-    "tipo": "Equipo",
-    "caracteristicas": "Bandejas: 10 bandejas GN 1/1 Alimentacion: Electrico Ancho: 750 mm Profundidad: 783 mm Altura: 1010 mm Peso: 98 kg Voltaje: 380-415v /220-240v 1N Frecuencia: 50 Hz Potencia nominal gas : 19 Consumo en kWh: 34 kWh/dia",
-    "categoria": "Horno",
-    "imagen": "https://res.cloudinary.com/dbth9b3ta/image/upload/v1685645537/products/jtupoltw1svpvyt29njp.png",
-    "precio": 47700000,
-    "stock": 0,
-    "marca": "Fagor",
-    "ref": "XEVC-1011-EPRM",
-    "estado": "nuevo"
+      "id": "f72aacfb-6c01-46b3-b8a2-49c7e2c4b70e",
+      "nombre": "Cheftop Mind.Maps Countertop plus",
+      "descripcion": "Cheftop Mind.Maps PLUS es el horno combinado inteligente que asa, fríe, a la parrilla, dora, ahuma, cocina con vapor y mucho más. Ciclos de cocción atuomáticos y funciones inteligentes para resultados siempre impecables",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 10 bandejas GN 1/1 Alimentacion: Electrico Ancho: 750 mm Profundidad: 783 mm Altura: 1010 mm Peso: 98 kg Voltaje: 380-415v /220-240v 1N Frecuencia: 50 Hz Potencia nominal gas : 19 Consumo en kWh: 34 kWh/dia",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686430388/products/uhva7crltfo4knzba74t.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686430390/products/usesxhdy8mkcdvlreon7.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686430391/products/mq3686gkpzfmnbgfsvvx.png"
+      ],
+      "precio": 47700000,
+      "stock": 0,
+      "marca": "Fagor",
+      "ref": "XEVC-1011-EPRM",
+      "estado":"nuevo"
     },
     {
-    "id": "c3dca030-dd02-479e-a9a2-691dcd7b9ff2",
-    "nombre": "Anna Linemicro Manual",
-    "descripcion": "LINEMICRO son los hornos compactos diseñados como herramienta para los procesos de confitería y panadería más simples y para los productos de panadería congelados y pre-horneados",
-    "tipo": "Equipo",
-    "caracteristicas": "Bandejas: 4 bandejas 460X330 Alimentacion: Eléctrico Ancho: 600mm Profundidad: 587 mm Altura: 472 mm Peso: 22 kg Voltaje: 220-240v 1N Frecuencia: 50 Hz Energia electrica: 3kW",
-    "categoria": "Horno",
-    "imagen": "https://res.cloudinary.com/dbth9b3ta/image/upload/v1685645568/products/juduioy7lzv2tghhfi6x.png",
-    "precio": 3375000,
-    "stock": 0,
-    "marca": "WinterHalter",
-    "ref": "XF023",
-    "estado": "nuevo"
+      "id": "982d4602-6bcb-4beb-a42e-e5d9039eb967",
+      "nombre": "Anna Linemicro Manual",
+      "descripcion": "LINEMICRO son los hornos compactos diseñados como herramienta para los procesos de confitería y panadería más simples y para los productos de panadería congelados y pre-horneados",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 4 bandejas 460X330 Alimentacion: Eléctrico Ancho: 600mm Profundidad: 587 mm Altura: 472 mm Peso: 22 kg Voltaje: 220-240v 1N Frecuencia: 50 Hz Energia electrica: 3kW",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686430747/products/pgvgypqhaujqmjwnck6n.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686430748/products/kulxfjulb73wbwycqmln.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686430750/products/yyikkycijvvp5jurnysi.png"
+      ],
+      "precio": 3375000,
+      "stock": 0,
+      "marca": "WinterHalter",
+      "ref": "XF023",
+      "estado":"nuevo"
     },
     {
-    "id": "76ace90a-3deb-4932-8a49-baf9e413686e",
-    "nombre": "Lisa Linemicro Manual",
-    "descripcion": "LINEMICRO son los hornos compactos diseñados como herramienta para los procesos de confitería y panadería más simples y para los productos de panadería congelados y pre-horneados",
-    "tipo": "Equipo",
-    "caracteristicas": "Bandejas: 3 bandejas 460X330 Alimentacion: Eléctrico Ancho: 600mm Profundidad: 587 mm Altura: 402 mm Peso: 20 kg Voltaje: 120v 1N Frecuencia: 60 Hz Energia electrica: 1kW",
-    "categoria": "Horno",
-    "imagen": "https://res.cloudinary.com/dbth9b3ta/image/upload/v1685645581/products/xke017ob2yex5okzdlrl.png",
-    "precio": 3172500,
-    "stock": 0,
-    "marca": "Lainox",
-    "ref": "XAF013",
-    "estado": "nuevo"
+      "id": "a8ed478b-78ae-4379-8cd5-55df238b889e",
+      "nombre": "Lisa Linemicro Manual",
+      "descripcion": "LINEMICRO son los hornos compactos diseñados como herramienta para los procesos de confitería y panadería más simples y para los productos de panadería congelados y pre-horneados",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 3 bandejas 460X330 Alimentacion: Eléctrico Ancho: 600mm Profundidad: 587 mm Altura: 402 mm Peso: 20 kg Voltaje: 120v 1N Frecuencia: 60 Hz Energia electrica: 1kW",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686431139/products/prmryfupcfslg4s4uzc0.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686431141/products/br9yzvwlsaufkgnvmy1p.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686431142/products/l3k1smbdns4vqlwwvhaz.png"
+      ],
+      "precio": 3172500,
+      "stock": 0,
+      "marca": "Lainox",
+      "ref": "XAF013",
+      "estado":"nuevo"
     },
     {
-    "id": "2b051a5c-5a92-448d-a293-7b2c31b96c0c",
-    "nombre": "Icombi Pro",
-    "descripcion": "Sistema de cocción inteligente interconectable con los modos de operación Aves, Carne, Pescado, Huevos /Postres, Guarniciones/Verduras, Panadería y Finishing, y los procesos de cocción Asar, Cocer, Hornear y Parrilla",
-    "tipo": "Equipo",
-    "caracteristicas": "Bandejas: 6 bandejas Alimentacion: Eléctrico Ancho: 655mm Profundidad: 594 mm Altura: 621 mm Peso: 67 kg Voltaje: 220v 3 Frecuencia: 60 Hz Carga: 5,3kW",
-    "categoria": "Horno",
-    "imagen": "https://res.cloudinary.com/dbth9b3ta/image/upload/v1685645656/products/kize7nvoljd2rv8sosoj.png",
-    "precio": 30000000,
-    "stock": 0,
-    "marca": "Rational",
-    "ref": "XS 6-2/3E",
-    "estado": "nuevo"
+      "id": "b78fa1a0-3ad4-42c0-a92e-1f0a1a28ca0f",
+      "nombre": "Icombi Pro",
+      "descripcion": "Sistema de cocción inteligente interconectable con los modos de operación Aves, Carne, Pescado, Huevos /Postres, Guarniciones/Verduras, Panadería y Finishing, y los procesos de cocción Asar, Cocer, Hornear y Parrilla",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 6 bandejas Alimentacion: Eléctrico Ancho: 655mm Profundidad: 594 mm Altura: 621 mm Peso: 67 kg Voltaje: 220v 3 Frecuencia: 60 Hz Carga: 5,3kW",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686431552/products/up9k1xswcqgxvea5ay0g.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686431554/products/wde2zljm77omnscg5lmn.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686431556/products/jb4c8k4lgz8gbphd17hu.png"
+      ],
+      "precio": 30000000,
+      "stock": 0,
+      "marca": "Rational",
+      "ref": "XS 6-2/3E",
+      "estado":"nuevo"
     },
     {
-    "id": "2900dd1a-5a6f-41be-aca3-4d1e9a55a7f7",
-    "nombre": "Icombi Pro",
-    "descripcion": "Sistema de cocción inteligente interconectable con los modos de operación Aves, Carne, Pescado, Huevos /Postres, Guarniciones/Verduras, Panadería y Finishing, y los procesos de cocción Asar, Cocer, Hornear y Parrilla",
-    "tipo": "Equipo",
-    "caracteristicas": "Bandejas: 6 bandejas Alimentacion: Gas Ancho: 850mm Profundidad: 804 mm Altura: 842 mm Peso: 99 kg Voltaje: 220v 3 Frecuencia: 60 Hz Carga: 9,9kW",
-    "categoria": "Horno",
-    "imagen": "https://res.cloudinary.com/dbth9b3ta/image/upload/v1685645691/products/xs5vvtggugnlswtm3xm1.png",
-    "precio": 25000000,
-    "stock": 0,
-    "marca": "Uniox",
-    "ref": "6-1/1 E/G",
-    "estado": "nuevo"
+      "id": "fa7a1189-680d-402f-a9be-2532d435e4f6",
+      "nombre": "Icombi Pro",
+      "descripcion": "Sistema de cocción inteligente interconectable con los modos de operación Aves, Carne, Pescado, Huevos /Postres, Guarniciones/Verduras, Panadería y Finishing, y los procesos de cocción Asar, Cocer, Hornear y Parrilla",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 6 bandejas Alimentacion: Gas Ancho: 850mm Profundidad: 804 mm Altura: 842 mm Peso: 99 kg Voltaje: 220v 3 Frecuencia: 60 Hz Carga: 9,9kW",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686436981/products/rqzfvoudumlowbj3ehxh.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686436982/products/zlxqdi2mv0hw5ydhi23r.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686436984/products/wtgfbl9e2u7tnk9lctiy.png"
+      ],
+      "precio": 25000000,
+      "stock": 0,
+      "marca": "Unox",
+      "ref": "6-1/1 E/G",
+      "estado":"nuevo"
     },
     {
-    "id": "e77470b2-776c-4f7c-8c96-682cffca0754",
-    "nombre": "Icombi Pro",
-    "descripcion": "Sistema de cocción inteligente interconectable con los modos de operación Aves, Carne, Pescado, Huevos /Postres, Guarniciones/Verduras, Panadería y Finishing, y los procesos de cocción Asar, Cocer, Hornear y Parrilla",
-    "tipo": "Equipo",
-    "caracteristicas": "Bandejas: 10 bandejas Alimentacion: Gas Ancho: 850mm Profundidad: 1064 mm Altura: 842 mm Peso: 127 kg Voltaje: 220v 3 Frecuencia: 60 Hz Carga: 17,5kW",
-    "categoria": "Horno",
-    "imagen": "https://res.cloudinary.com/dbth9b3ta/image/upload/v1685645710/products/qops2xpebgbft8zexuak.png",
-    "precio": 45000000,
-    "stock": 0,
-    "marca": "Fagor",
-    "ref": "10-1/1 E/G",
-    "estado": "nuevo"
+      "id": "087c304d-042d-47f8-a9f8-9e7fb9b7ad1d",
+      "nombre": "Icombi Pro",
+      "descripcion": "Sistema de cocción inteligente interconectable con los modos de operación Aves, Carne, Pescado, Huevos /Postres, Guarniciones/Verduras, Panadería y Finishing, y los procesos de cocción Asar, Cocer, Hornear y Parrilla",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 10 bandejas Alimentacion: Gas Ancho: 850mm Profundidad: 1064 mm Altura: 842 mm Peso: 127 kg Voltaje: 220v 3 Frecuencia: 60 Hz Carga: 17,5kW",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686437107/products/iqi1l2xxiy5juokbpcj5.png"
+      ],
+      "precio": 45000000,
+      "stock": 0,
+      "marca": "Fagor",
+      "ref": "10-1/1 E/G",
+      "estado":"nuevo"
     },
     {
-    "id": "873b0a2d-1f0b-4a69-a675-8548cb8ba4e1",
-    "nombre": "Icombi Pro",
-    "descripcion": "Sistema de cocción inteligente interconectable con los modos de operación Aves, Carne, Pescado, Huevos /Postres, Guarniciones/Verduras, Panadería y Finishing, y los procesos de cocción Asar, Cocer, Hornear y Parrilla",
-    "tipo": "Equipo",
-    "caracteristicas": "Bandejas: 20 bandejas Alimentacion: Gas Ancho: 877mm Profundidad: 1872 mmAltura: 913 mm Peso: 263 kg Voltaje: 220v 3 Frecuencia: 60 Hz Carga: 34,5kW",
-    "categoria": "Horno",
-    "imagen": "https://res.cloudinary.com/dbth9b3ta/image/upload/v1685645750/products/btr07cygknqorjm4fer1.png",
-    "precio": 35000000,
-    "stock": 0,
-    "marca": "WinterHalter",
-    "ref": "20-1/1 E/G",
-    "estado": "nuevo"
+      "id": "b9ddd5a6-a97a-4c11-8f28-de4a92877120",
+      "nombre": "Icombi Pro",
+      "descripcion": "Sistema de cocción inteligente interconectable con los modos de operación Aves, Carne, Pescado, Huevos /Postres, Guarniciones/Verduras, Panadería y Finishing, y los procesos de cocción Asar, Cocer, Hornear y Parrilla",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 20 bandejas Alimentacion: Gas Ancho: 877mm Profundidad: 1872 mmAltura: 913 mm Peso: 263 kg Voltaje: 220v 3 Frecuencia: 60 Hz Carga: 34,5kW",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686437269/products/c8glyg4zx8ykjmaopwh5.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686437271/products/gilrhbifch9bapwduqfa.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686437272/products/dwgsqysqmgdo0gonqcft.png"
+      ],
+      "precio": 35000000,
+      "stock": 0,
+      "marca": "WinterHalter",
+      "ref": "20-1/1 E/G",
+      "estado":"nuevo"
     },
     {
-    "id": "e2a69738-726b-479b-abc8-f903eb8ea86f",
-    "nombre": "Icombi Pro",
-    "descripcion": "Sistema de cocción inteligente interconectable con los modos de operación Aves, Carne, Pescado, Huevos /Postres, Guarniciones/Verduras, Panadería y Finishing, y los procesos de cocción Asar, Cocer, Hornear y Parrilla",
-    "tipo": "Equipo",
-    "caracteristicas": "Bandejas: 10 bandejas Alimentacion: Gas Ancho: 850mm Profundidad: 1064 mm Altura: 842 mm Peso: 127 kg Voltaje: 220v 3 Frecuencia: 60 Hz Carga: 17,5kW",
-    "categoria": "Horno",
-    "imagen": "https://res.cloudinary.com/dbth9b3ta/image/upload/v1685645767/products/cy1tihs4aie80jiqlckr.png",
-    "precio": 27000000,
-    "stock": 0,
-    "marca": "Lainox",
-    "ref": "101 E/G",
-    "estado": "nuevo"
+      "id": "29a14d0b-e931-4134-be14-2359868f3bfd",
+      "nombre": "Icombi Pro",
+      "descripcion": "Sistema de cocción inteligente interconectable con los modos de operación Aves, Carne, Pescado, Huevos /Postres, Guarniciones/Verduras, Panadería y Finishing, y los procesos de cocción Asar, Cocer, Hornear y Parrilla",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 10 bandejas Alimentacion: Gas Ancho: 850mm Profundidad: 1064 mm Altura: 842 mm Peso: 127 kg Voltaje: 220v 3 Frecuencia: 60 Hz Carga: 17,5kW",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686437380/products/dk65r4wai4imysgcdonm.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686437382/products/pvu9xsro0hs7dnkjwrld.png"
+      ],
+      "precio": 27000000,
+      "stock": 0,
+      "marca": "Lainox",
+      "ref": "101 E/G",
+      "estado":"nuevo"
+    },
+    {
+      "id": "56d4fc2f-5059-43d2-b8f9-60026cff6df9",
+      "nombre": "Lainox sapiens",
+      "descripcion": "Horno eléctrico de sobremesa Sapiens modelo 102, fabricado por Lainox. Con 99 programas de hasta 9 fases cada uno, conexión USB para carga y descarga de programas y recetas y datos HACCP. Pantalla digital TFT alfanumérica con iconos. Rango de temperatura de trabajo: hasta 300ºC. Modalidades de cocción: vapor 100 %, convección y mixto convección – vapor. Sonda al corazón opcional.",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 10 bandejas Alimentacion: Electrico Ancho: 1170mm Profundidad: 895 mm Altura: 1040 mm Voltaje: 400v 3 Potencia: 31kW Rango temp: 30ºC A 300ºC",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438119/products/go2kuse6cys68w1ykkps.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438121/products/lq8bht863almsxo1imxh.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438122/products/gk50ekl0smriizputbst.png"
+      ],
+      "precio": 46000000,
+      "stock": 0,
+      "marca": "Lainox",
+      "ref": "102",
+      "estado":"nuevo"
+    },
+    {
+      "id": "3c73c633-abcf-4654-bec7-bc2672231b3a",
+      "nombre": "Lainox sapiens",
+      "descripcion": "Para quienes no buscan la electrónica más atrevida, más bien quieren cocinar y programar con mandos simples y manuales, sin tener que renunciar a la precisión de los controles digitales. Los hornos Sapiens vienen con un gran equipamiento de serie. Ideal para cualquier negocio de hostelería y industria alimentaria.",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 20 bandejas Alimentacion: Electrico Ancho: 892mm Profundidad: 862 mm Altura: 1812 mm Voltaje: 400v 3 Potencia: 37,2kW Rango temp: 30ºC A 300ºC",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438427/products/rfthr8p438x874avilap.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438428/products/xiu3kmrgnfwqlrlfdiwe.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438430/products/vtk7qdnu4xjtf9nzrcqb.png"
+      ],
+      "precio": 58000000,
+      "stock": 0,
+      "marca": "Lainox",
+      "ref": "201",
+      "estado":"nuevo"
+    },
+    {
+      "id": "e7e8708b-bb7b-4ab8-82c0-42ecc4cc6216",
+      "nombre": "Lainox sapiens",
+      "descripcion": "Para quienes no buscan la electrónica más atrevida, más bien quieren cocinar y programar con mandos simples y manuales, sin tener que renunciar a la precisión de los controles digitales. Los hornos Sapiens vienen con un gran equipamiento de serie. Ideal para cualquier negocio de hostelería y industria alimentaria.",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 6 bandejas Alimentacion: Gas Ancho: 852mm Profundidad: 797 mm Altura: 775 mm Voltaje: 220v 3 Potencia: 0,8kW Rango temp: 30ºC A 300ºC",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438654/products/pavkfceurlhqys1czh6h.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438655/products/krbcbvtes15x9iwelef7.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438656/products/dhbxsywojwktkfrgej39.png"
+      ],
+      "precio": 28500000,
+      "stock": 0,
+      "marca": "Lainox",
+      "ref": "61",
+      "estado":"nuevo"
+    },
+    {
+      "id": "b23d4ea4-8588-4e40-a422-61c83c410e5e",
+      "nombre": "Lainox Naboo",
+      "descripcion": "Horno a gas programable mixto convección – vapor, fabricado por Lainox, Naboo modelo 071 con generador de vapor (boiler), con capacidad para 7 bandejas GN1/1. Todo tipo de cocciones, con un rango de temperatura de trabajo hasta 300ºC. Conexión Wi-fi y app Nabook incluidos, que permiten cargar, modificar, escandallar, conectarte a todos los equipos de la misma red, controlar consumos, etc.",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 7 bandejas Alimentacion: Gas Ancho: 875mm Profundidad: 825 mm Altura: 820 mm Voltaje: 220v  Potencia: 15kW Rango temp: 30ºC A 300ºC",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438856/products/u3doamsmqfgzx5ip4gtn.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438857/products/alybzenh7fbgxhdlk05r.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686438859/products/dybkmlwajqq3cjyzygzh.png"
+      ],
+      "precio": 34500000,
+      "stock": 0,
+      "marca": "Lainox",
+      "ref": "71",
+      "estado":"nuevo"
+    },
+    {
+      "id": "fa8b1914-4426-4b16-846e-8b3dd18b4395",
+      "nombre": "Lainox Naboo",
+      "descripcion": "Horno de carro a gas programable mixto convección – vapor, fabricado por Lainox, Naboo modelo 201 con vapor directo, con capacidad para 20 bandejas GN 1/1. Todo tipo de cocciones, con un rango de temperatura de trabajo hasta 300ºC. Conexión Wi-fi y app Nabook incluidos, que permiten cargar, modificar, escandallar, conectarte a todos los equipos de la misma red, controlar consumos, etc.",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandejas: 20 bandejas Alimentacion: Gas Ancho: 960mm Profundidad: 825 mm Altura: 1810 mm Voltaje: 220v  Potencia: 36kW Rango temp: 30ºC A 300ºC",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686439127/products/jdfq0n1777ofsksvxvrh.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686439129/products/va7zwsjirswww2mzi2tp.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686439130/products/nrg1rwempvexbnldtrdm.png"
+      ],
+      "precio": 89000000,
+      "stock": 0,
+      "marca": "Lainox",
+      "ref": "201",
+      "estado":"usado"
+    },
+    {
+      "id": "4701337e-434b-4c2b-939f-ce154cf4e196",
+      "nombre": "Lavavajillas carga frontal",
+      "descripcion": "Perfectamente adaptada al espacio disponible para usted y su material. Gracias a los diferentes tamaños de máquina, se adapta perfectamente al espacio disponible. La serie UC de Winterhalter impresiona por sus controles intuitivos, consumo reducido y a su elevada rentabilidad. Su misión: cristalería resplandeciente, vajilla limpia y cubertería impecable.",
+      "tipo": "Equipo",
+      "caracteristicas": "Canasta: 50x50cm Alimentacion: Electrico Ancho: 600mm Profundidad: 603 mm Altura: 760 mm Peso: 64kg Voltaje: 220v  Capacidad cuba: 15,3 litros",
+      "categoria": "Lavavajillas ",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686439475/products/hbqnjshn0ucb9vmxdibm.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686439476/products/s87orcxegcdik6dscb7n.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686439478/products/tb9jfga4329s6fh0wcmk.png"
+      ],
+      "precio": 7800000,
+      "stock": 0,
+      "marca": "Winterhalter",
+      "ref": "UC series",
+      "estado":"usado"
+    },
+    {
+      "id": "a215f14b-984b-4890-b34d-d5456919887c",
+      "nombre": "Lavavajillas de capota",
+      "descripcion": "Cristalería brillante, platos impecables, cubiertos resplandecientes, vasos de plástico perfectos o todo al mismo tiempo. Los nuevos lavavajillas de la serie PT, están disponibles en tres tamaños de máquina, pueden adaptarse al tipo de material a lavar y al grado de suciedad a través de los ajustes del software. Con un potente sistema de lavado y un concepto de higiene perfecta, Winterhalter promete resultados de lavado al más alto nivel, incluso en caso de suciedad reseca. ",
+      "tipo": "Equipo",
+      "caracteristicas": "Canasta: 50x50cm Alimentacion: Electrico Ancho: 635mm Profundidad: 750 mm Altura: 2010 mm Voltaje: 220v  Potencia: 8kW Capacidad cuba: 35litros",
+      "categoria": "Lavavajillas",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440021/products/rizm8ab3dahfczth9yji.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440022/products/jtkfflnk3ebvecgebhq9.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440024/products/ys2pqlrocswvitecuzls.png"
+      ],
+      "precio": 27000000,
+      "stock": 0,
+      "marca": "Winterhalter",
+      "ref": "PT series",
+      "estado":"usado"
+    },
+    {
+      "id": "8e9dba66-be0b-44ec-96df-86959a242c0a",
+      "nombre": "Lavautensilios",
+      "descripcion": "Zonas de lavado pequeñas, barras estrechas o zonas con espacio limitado. En lugares en los que aparentemente no haya espacio para lavar, es donde entra en juego la GS 630 de Winterhalter. Es en estos casos en los que el lavautensilios más pequeño del mundo muestra todo su potencial. Prácticamente no requiere espacio en la cocina y, en su versión de carga frontal, se adapta también al espacio bajo la barra. Es muy fácil de manejar, lava rápida y eficientemente.",
+      "tipo": "Equipo",
+      "caracteristicas": "Canasta: 50x50cm Alimentacion: ElectricoAncho: 870mm Profundidad: 600 mm Altura: 835 mm Voltaje: 220v  Peso: 105kg Potencia: 8,3kW Capacidad cuba: 25litros",
+      "categoria": "Lavautensilios",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440255/products/t4lid3j0ayzbcgputqqx.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440256/products/vglsdtjtw3l05bmiudur.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440258/products/jua2nrdezmiytlhvtq5n.png"
+      ],
+      "precio": 4500000,
+      "stock": 0,
+      "marca": "Winterhalter",
+      "ref": "GS 630",
+      "estado":"usado"
+    },
+    {
+      "id": "62000ede-f309-4a48-b264-cfb0c21fb71e",
+      "nombre": "Horno a gas de dos cámaras",
+      "descripcion": "Equipado con dos cámaras independientes de doble bandeja de 60x40 cm. Fabricado exteriormente en acero inoxidable, Interior de la cámara en cold rolled. Con piso de piedra para mayor transferencia de calor. Controles electrónicos con ajuste de temperatura independiente en la parte inferior y superior de cada cámara, temporizador y humidificador para cada cámara.",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandeja: 60x40cm Alimentacion: Gas Ancho: 1355mm Profundidad: 900 mm Altura: 1375 mm Potencia:0,2kW Voltaje: 110v  Peso:350kg",
+      "categoria": "Horno",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440482/products/ekdkr4vaklrfm7yk2ohs.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440484/products/uyqwj1fwwbxnfdehfwjp.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440485/products/hz7f0xfudw642ysgec9g.png"
+      ],
+      "precio": 10000000,
+      "stock": 0,
+      "marca": "Tornado",
+      "ref": "GFO-4C",
+      "estado":"usado"
+    },
+    {
+      "id": "a36f5040-fd0e-4bf0-9aec-6012003375ba",
+      "nombre": "Freidor doble",
+      "descripcion": "Su doble tanque te permite freír a dos temperaturas, facilitando el manejo de diferentes alimentos, aumentando el rendimiento en la preparación de alimentos disminuyendo los tiempos de producción.",
+      "tipo": "Equipo",
+      "caracteristicas": "Bandeja: 60x40cm Alimentacion: Gas Ancho: 450mm Profundidad: 780 mm Altura: 1130 mm Capacidad:18,5Lts Peso:50kg",
+      "categoria": "Freidor",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440709/products/rmwqqealssgragbrlabg.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686440711/products/ywbxqoqqptda0egwbalq.png"
+      ],
+      "precio": 4200000,
+      "stock": 0,
+      "marca": "Duprotec",
+      "ref": "FR18S1",
+      "estado":"usado"
+    },
+    {
+      "id": "5e531c06-9d91-49c5-86d1-3560bf10ef11",
+      "nombre": "Tarjeta control digital plus cheftop",
+      "descripcion": null,
+      "tipo": "Repuesto",
+      "caracteristicas": "Longitud: 14,4 pulgadas/36,58cm Anchura: 7,2 pulgadas/18,29cm Peso: 1,8 libras / 816g Compatibilidad: XACC-0513-EPRM XAVC-0511-GPRM XAVC-06FS-EPRM XAVC-06FS-GPRM XAVC-1011-EPRM XAVC-1011-GPRM XAVC-10FS-EPRM XAVC-10FS-GPRM XAVL-2021-NPRS",
+      "categoria": "Electronico",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686441007/products/b7ck38cx6d84ozj2u0oy.png",
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686441008/products/u8sirgapvichpli5513i.png"
+      ],
+      "precio": 6700000,
+      "stock": 0,
+      "marca": "Unox",
+      "ref": "KPE1057A",
+      "estado":"usado"
+    },
+    {
+      "id": "93f65c2a-e32f-4ba2-bb31-adbc1d115f72",
+      "nombre": "Control de ignición o llama",
+      "descripcion": null,
+      "tipo": "Repuesto",
+      "caracteristicas": "Voltaje: 220-240CVAC Frecuencia: 50-60hz Potencia: 4 VA Cantidad de electrodos: 2",
+      "categoria": "Electrico",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686441551/products/humj0xjclbrudxgqcvn3.png"
+      ],
+      "precio": 2500000,
+      "stock": 0,
+      "marca": "Honeywell",
+      "ref": "Honeywell S4565C 3116U",
+      "estado":"usado"
+    },
+    {
+      "id": "47ea0e9a-511b-4fa3-b77f-2af6476237f7",
+      "nombre": "Unidad de encendido",
+      "descripcion": null,
+      "tipo": "Repuesto",
+      "caracteristicas": "Compatibilidad: CE1047A1 VE1636A1",
+      "categoria": "Electrico",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686441706/products/uovlolmd3lutjx2x9otz.png"
+      ],
+      "precio": 3100000,
+      "stock": 0,
+      "marca": "Unox",
+      "ref": "KVE 1636A",
+      "estado":"usado"
+    },
+    {
+      "id": "0b6c8b69-c0bc-46c4-982e-57817bfb65ed",
+      "nombre": "Detergente ULTRA UNOX",
+      "descripcion": "Detergente Ultra intenso de uso exclusivo para hornos profesionales Unox con cricuito de lavado automático.",
+      "tipo": "Repuesto",
+      "caracteristicas": "Contenido: Hidroxido de sodio Compatibilidad: Línea Mindmaps Línea Bakerlux Líneas de lavado automático",
+      "categoria": "Electronico",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686442385/products/rvs7j13uvftjouwz0sa1.png"
+      ],
+      "precio": 320000,
+      "stock": 0,
+      "marca": "Unox",
+      "ref": "DB1050",
+      "estado":"usado"
+    },
+    {
+      "id": "96956b48-8d64-4273-a1ac-bb12a2a1189c",
+      "nombre": "Pastillas descalcificadoras",
+      "descripcion": "El descalcificador especial contenido en las pastillas 'Care' combate las incrustaciones calcáreas inhibiendo desde un principio su formacion",
+      "tipo": "Repuesto",
+      "caracteristicas": "Contenido: 150 pastillas descalcificadoras Peso: 6 kg",
+      "categoria": "Electronico",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686442498/products/qlfyghr0tplst2fsvi5e.png"
+      ],
+      "precio": 460000,
+      "stock": 0,
+      "marca": "Rational",
+      "ref": "Care-tab",
+      "estado":"usado"
+    },
+    {
+      "id": "5948ca0d-c69c-4f4f-aef3-71201f1d9533",
+      "nombre": "Pastillas para limpieza",
+      "descripcion": "Pastillas detergente para todos los hornos Rational electricos y a gas. Elaboradas con un nuevo complejo de sustancias activas de acción fuerte, aseguran limpieza perfecta",
+      "tipo": "Repuesto",
+      "caracteristicas": "Contenido: 100 pastillas",
+      "categoria": "Electronico",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686442625/products/uneqculem9gbhwfihvqn.png"
+      ],
+      "precio": 440000,
+      "stock": 0,
+      "marca": "Rational",
+      "ref": "Cleaner-tab",
+      "estado":"usado"
+    },
+    {
+      "id": "45f50c39-bd19-4ca3-b747-9c1bbcb77857",
+      "nombre": "Valvula solenoide triple",
+      "descripcion": null,
+      "tipo": "Repuesto",
+      "caracteristicas": "Voltaje: 200-240v Frecuencia: 50-60Hz Compatibilidad: SCCWE101E SCCWE101G SCCWE102E SCCWE201E SCCWE201G",
+      "categoria": "Electrico",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686443088/products/ph64zfca2vxwf0vayiwi.png"
+      ],
+      "precio": 750000,
+      "stock": 0,
+      "marca": "Rational",
+      "ref": "50.01.050S",
+      "estado":"usado"
+    },
+    {
+      "id": "1027cee2-ea58-4121-8797-ff7866fb6cd1",
+      "nombre": "Termopila para freidora",
+      "descripcion": null,
+      "tipo": "Repuesto",
+      "caracteristicas": "Voltaje: 750mV Longitud: 900mm Diametro: 9mm",
+      "categoria": "Electrico",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686443198/products/tizjfuldulghpky3ncrh.png"
+      ],
+      "precio": 95000,
+      "stock": 0,
+      "marca": "Imperial",
+      "ref": "TKDK35K96/CCI2C",
+      "estado":"usado"
+    },
+    {
+      "id": "6c39b3da-4faa-433f-8942-60e6672d2d44",
+      "nombre": "Manguera para gas",
+      "descripcion": null,
+      "tipo": "Repuesto",
+      "caracteristicas": "Diametro:1/2'Standard:EN 14800",
+      "categoria": "Gas",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686443301/products/uu8ekif9xuce1kncl2wh.png"
+      ],
+      "precio": 180000,
+      "stock": 0,
+      "marca": "Imperial",
+      "ref": "INOX DN12",
+      "estado":"nuevo"
+    },
+    {
+      "id": "960aabe0-9b44-49de-afa4-6aa29dfa9adc",
+      "nombre": "Clavija de seguridad",
+      "descripcion": null,
+      "tipo": "Repuesto",
+      "caracteristicas": "Voltaje: 200-240v Frecuencia: 50-60Hz Standard: IP67",
+      "categoria": "Electrico",
+      "imagenes": [
+        "https://res.cloudinary.com/dbth9b3ta/image/upload/v1686443408/products/ca4aklclvccmymayadok.png"
+      ],
+      "precio": 80000,
+      "stock": 0,
+      "marca": "Famatel",
+      "ref": "3P+T",
+      "estado":"usado"
     }
-    ]
+  ]
