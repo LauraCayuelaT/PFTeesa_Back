@@ -35,7 +35,7 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
         console.error('Error al iniciar sesión:', err);
         return next(err);
       }
-      req.flash('username',nombre)
+      
       return res.redirect(redirectUrl);
       
     });
