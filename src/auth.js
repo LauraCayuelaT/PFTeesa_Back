@@ -10,7 +10,7 @@ const googleStrategySignup = new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {
     
-      return cb(null, profile);
+      return cb(null, profile)
     
   }
 );
