@@ -27,14 +27,13 @@ googleRouter.get('/callback', (req, res, next) => {
       User.findOne({ where: { correo: emails[0].value } })
         .then(existingUser => {
           if (existingUser) {
-            req.session.destroy();
-            return res.redirect('https://pf-teesa-front.vercel.app/login'); //definir con el front que ruta vamos a mostrar para decirle al cliente que ya existe
+            return res.redirect('https://pf-teesa-front.vercel.app/home'); //definir con el front que ruta vamos a mostrar para decirle al cliente que ya existe
           }
   
           User.create({ nombre: displayName, correo: emails[0].value, googleToken: accessToken, refreshToken, tipo: false })
             .then(newUser => {
-              req.session.destroy();
-              res.redirect('https://pf-teesa-front.vercel.app/login');
+              
+              res.redirect('https://pf-teesa-front.vercel.app/home');
             })
             .catch(error => {
               console.error('Error al crear un nuevo usuario:', error);
