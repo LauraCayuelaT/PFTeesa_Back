@@ -50,7 +50,7 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
 
   googleLoginRouter.get('/perfil',(req,res)=>{
     const userName = req.flash('username')[0];
-    res.json(userName);
+    res.json({nombre:userName});
   })
 
 
