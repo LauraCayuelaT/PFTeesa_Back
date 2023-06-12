@@ -18,10 +18,10 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
 
   const { emails } = req.user;
 
-  const existingUser = User.findOne({ where: { correo: emails[0].value } });
+  const existingUser = await User.findOne({ where: { correo: emails[0].value } });
   try{
-  if(existingUser!==null){
-      
+  if(existingUser){
+    console.log(existingUser)
     const nombre = existingUser.nombre
 
 
@@ -45,7 +45,6 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
                 return next(err)}
 
 })
-
 
 
 
