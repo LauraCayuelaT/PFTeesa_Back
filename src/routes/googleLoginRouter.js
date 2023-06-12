@@ -21,8 +21,13 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
   const existingUser = await User.findOne({ where: { correo: emails[0].value } });
   try{
   if(existingUser){
-    console.log(existingUser)
-    const nombre = existingUser.nombre
+    const userData = {
+      correo: existingUser.correo,
+      nombre: existingUser.nombre
+    }
+
+    const queryParams = new URLSearchParams(userData).toString();
+    const redirectUrl = `https://pf-teesa-front.vercel.app/home?${queryParams}`;
 
 
     req.login(existingUser, err => {
@@ -31,7 +36,7 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
         return next(err);
       }
       req.flash('username',nombre)
-      return res.redirect("https://pf-teesa-front.vercel.app/home");
+      return res.redirect(redirectUrl);
       
     });
     } else {
