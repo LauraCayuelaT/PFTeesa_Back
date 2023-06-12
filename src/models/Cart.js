@@ -9,8 +9,7 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     cantidad: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      type: DataTypes.INTEGER
     }
   }, {timestamps: false});
 };
