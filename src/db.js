@@ -50,7 +50,7 @@ PurchasedProductModel(sequelize)
 ReviewModel(sequelize)
 
 const { User, Cart, Product, Service, Purchased, PurchasedProduct, Review } = sequelize.models;
-User.hasMany(Cart)
+User.belongsTo(Cart)
 User.hasMany(Service)
 User.hasMany(Purchased)
 Product.hasMany(Cart)
