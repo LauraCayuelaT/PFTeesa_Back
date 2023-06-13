@@ -2,7 +2,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{6,20}$/;  //1 Mayus,1 Num,1 car.esp, 6-20
 const bcryptjs=require('bcryptjs')
 
-const { User } = require("../db");
+const { User, Cart } = require("../db");
 const { Op } = require('sequelize');
 
 const addUser=async(req,res)=>{
@@ -28,7 +28,9 @@ const addUser=async(req,res)=>{
             }
         })
         if(creado){
-            return res.status(200).json({message:"Usuario creado"})
+            const cart = await Cart.create();
+            await cart.setUser(usuario); //pronto se crea el usuario se crea una cart asignado al mismo
+            return res.status(200).json({usuario, cart})
         }else{
             return res.status(400).json({message:"Ya existe un usario con ese correo o nit"})
         }
