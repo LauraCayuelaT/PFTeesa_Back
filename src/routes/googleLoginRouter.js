@@ -2,6 +2,7 @@ const { Router } =require("express");
 const googleLoginRouter = Router();
 const {User} = require("../db")
 const passport = require("passport");
+const googleRouter = require("./google");
 
 
 
@@ -17,16 +18,16 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
 
   const { emails } = req.user;
 
-  const existingUser = User.findOne({ where: { correo: emails[0].value } });
+  const existingUser = await User.findOne({ where: { correo: emails[0].value } });
   try{
   if(existingUser){
     const userData = {
       correo: existingUser.correo,
-      nombre: existingUser.nombre,
-    };
+      nombre: existingUser.nombre
+    }
+
     const queryParams = new URLSearchParams(userData).toString();
     const redirectUrl = `https://pf-teesa-front.vercel.app/home?${queryParams}`;
-    
 
 
     req.login(existingUser, err => {
@@ -34,7 +35,9 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
         console.error('Error al iniciar sesión:', err);
         return next(err);
       }
-      return res.redirect(redirectUrl);;
+     
+      return res.redirect(redirectUrl);
+      
     });
     } else {
     // Usuario no existente, redirigir a la página de registro o mostrar un mensaje de error
@@ -50,6 +53,7 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
 
 
 
+ 
 
 
   googleLoginRouter.get('/api/getErrorMessage', (req, res) => {
