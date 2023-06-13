@@ -7,6 +7,10 @@ module.exports = (sequelize) => {
       defaultValue:DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false
+
+    },
+    cantidad: {
+      type: DataTypes.INTEGER
     }
   }, {timestamps: false});
 };
