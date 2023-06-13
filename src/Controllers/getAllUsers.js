@@ -1,10 +1,14 @@
-const { User } = require("../db");
+const { User, Cart } = require("../db");
 
 const getAllUsers=async(req,res)=>{
 
     
     try {
-        const allUsers= await User.findAll()
+        const allUsers= await User.findAll({//agregar la informacion del cart creado automaticamente
+            include: {
+              model: Cart
+            },
+          })
         res.status(200).json(allUsers)
         
     } catch (error) {
