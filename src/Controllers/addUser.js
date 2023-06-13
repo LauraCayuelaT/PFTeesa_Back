@@ -19,6 +19,11 @@ const addUser=async(req,res)=>{
 
         const contrasenaHash= await bcryptjs.hash(contrasena,8) //8 numero de saltos, mayor numero mas seguro pero mas lento
 
+        if(!direccion) direccion="";
+        if(!telefono) telefono="";
+        if(!nit) nit=0;
+        
+
         const [usuario,creado]= await User.findOrCreate({
             where:{
                 [Op.or]:[{correo},{nit}]
