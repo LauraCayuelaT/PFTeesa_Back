@@ -26,7 +26,7 @@ const addUser=async(req,res)=>{
 
         const [usuario,creado]= await User.findOrCreate({
             where:{
-                [Op.or]:[{correo},{nit}]
+                [Op.or]:[{correo}]
             },
             defaults:{
                 nombre,direccion,telefono,nit,correo,contrasena:contrasenaHash,tipo
@@ -35,7 +35,7 @@ const addUser=async(req,res)=>{
         if(creado){
             return res.status(200).json({message:"Usuario creado"})
         }else{
-            return res.status(400).json({message:"Ya existe un usario con ese correo o nit"})
+            return res.status(400).json({message:"Ya existe un usario con ese correo"})
         }
 
         
