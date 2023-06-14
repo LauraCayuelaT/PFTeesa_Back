@@ -26,7 +26,7 @@ const addUser=async(req,res)=>{
 
         const [usuario,creado]= await User.findOrCreate({
             where:{
-                [Op.or]:[{correo},{nit}]
+                [Op.or]:[{correo}]
             },
             defaults:{
                 nombre,direccion,telefono,nit,correo,contrasena:contrasenaHash,tipo
@@ -37,7 +37,7 @@ const addUser=async(req,res)=>{
             await cart.setUser(usuario); //pronto se crea el usuario se crea una cart asignado al mismo
             return res.status(200).json({usuario, cart})
         }else{
-            return res.status(400).json({message:"Ya existe un usario con ese correo o nit"})
+            return res.status(400).json({message:"Ya existe un usario con ese correo"})
         }
 
         
