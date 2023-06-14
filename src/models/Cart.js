@@ -8,9 +8,6 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false
 
-    },
-    cantidad: {
-      type: DataTypes.INTEGER
     }
   }, {timestamps: false});
 };
