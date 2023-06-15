@@ -7,7 +7,6 @@ const getCartProducts = async (req, res) => {
 
     if (CartId) {
 
-    // Verificar si los CartProducts existen
     cartProducts = await CartProducts.findAll({
       where: { CartId },
       include: {
@@ -16,7 +15,7 @@ const getCartProducts = async (req, res) => {
       },
     });
   } else {
-    cartProducts = []; // Si no se proporciona CartId, asignar un arreglo vacío
+    cartProducts = []; 
   }
 
     res.status(200).json({ cartProducts});
