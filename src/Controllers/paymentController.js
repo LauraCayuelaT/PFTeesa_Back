@@ -34,9 +34,9 @@ const createOrder = async (req,res)=>{
 
         }],
         back_urls: {
-            success: "http://localhost:3001/mercadopago/success",
-            failure: "http://localhost:3001/mercadopago/failure",
-            pending: "http://localhost:3001/mercadopago/pending"
+            success: "https://pf-teesa-front.vercel.app/checkoutsuccess",
+            failure: "https://pf-teesa-front.vercel.app/checkoutpending",
+            pending: "https://pf-teesa-front.vercel.app/checkoutfailed"
         },
         notification_url: "https://9010-2800-484-e882-90e4-90d2-8986-317b-11aa.ngrok.io/mercadopago/webhook"
     })
