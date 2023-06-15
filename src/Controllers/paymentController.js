@@ -4,7 +4,7 @@ const {CartProducts} = require("../db");
 
 const createOrder = async (req,res)=>{
     const {id} = req.params;
-
+    try{
 
     mercadopago.configure({
         access_token: "TEST-506669402188981-061413-d4d1537702f9ee8b568253de5e4b879f-1399136636"
@@ -43,7 +43,8 @@ const createOrder = async (req,res)=>{
 
     
 
-    res.send(result.body)
+    res.send(result.body)}
+    catch(err){send.sendStatus(400).json({message:err.message})}
 
 };
 
