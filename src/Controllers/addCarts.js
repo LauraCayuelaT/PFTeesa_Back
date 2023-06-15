@@ -15,7 +15,7 @@ const addCarts = async(req,res)=>{
         if (!product) {
           return res.status(404).json({ error: 'Producto no encontrado' });
         }
-    
+        const total = product.precio * cantidad;
         // Crear o actualizar el registro en la tabla CartProducts
         let cartProduct = await CartProducts.findOne({
           where: {
@@ -27,6 +27,7 @@ const addCarts = async(req,res)=>{
         if (cartProduct) {
           // Si el producto ya está en el carrito, actualizar la cantidad
           cartProduct.cantidad += cantidad;
+          cartProduct.total += total;
           await cartProduct.save();
         } else {
           // Si el producto no está en el carrito, crear un nuevo registro
@@ -34,6 +35,7 @@ const addCarts = async(req,res)=>{
             CartId,
             ProductId,
             cantidad,
+            total
           });
         }
     
