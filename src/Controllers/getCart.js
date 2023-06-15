@@ -3,19 +3,21 @@ const { CartProducts, Product } = require('../db');
 const getCartProducts = async (req, res) => {
   try {
     const { CartId } = req.query;
+    let cartProducts;
+
+    if (CartId) {
 
     // Verificar si los CartProducts existen
-    const cartProducts = await CartProducts.findAll({
+    cartProducts = await CartProducts.findAll({
       where: { CartId },
       include: {
         model: Product,
         attributes: ['id', 'nombre', 'precio', 'descripcion', 'imagenes', 'categoria', 'marca', 'ref' ], 
       },
     });
-
-    if (!cartProducts.length) {
-      return res.status(404).json({ error: 'No se encontraron CartProducts' });
-    }
+  } else {
+    cartProducts = []; // Si no se proporciona CartId, asignar un arreglo vacío
+  }
 
     res.status(200).json({ cartProducts});
   } catch (error) {
