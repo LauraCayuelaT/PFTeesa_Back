@@ -23,6 +23,8 @@ const tokenCheck=require("./tokenCheck")
 const session = require("express-session");
 const passport = require("passport");
 const flash = require("express-flash");
+const paymentRouter = require("./payment");
+
 require("../auth")
 
 router.use(flash())         
@@ -88,6 +90,11 @@ router.delete("/cart/:cartProductId", deleteCarts)
 
 //modifica un cart por params cartProductId
 router.put("/cart/:cartProductId", updateCarts)
+
+
+// MERCADO PAGO
+
+router.use("/mercadopago", paymentRouter)
 
 
 

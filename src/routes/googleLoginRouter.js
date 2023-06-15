@@ -23,7 +23,8 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
   if(existingUser){
     const userData = {
       correo: existingUser.correo,
-      nombre: existingUser.nombre
+      nombre: existingUser.nombre,
+      id: existingUser.id
     }
 
     const queryParams = new URLSearchParams(userData).toString();
