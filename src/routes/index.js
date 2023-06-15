@@ -16,6 +16,7 @@ const updateCarts=require("../Controllers/updateCarts")
 const createCart=require("../Controllers/createCart")
 const getCart = require("../Controllers/getCart")
 const addCarts = require("../Controllers/addCarts")
+const updateUser=require("../Controllers/updateUser")
 
 const loginCheck=require ("../Controllers/loginCheck")
 const tokenCheck=require("./tokenCheck")
@@ -55,6 +56,10 @@ router.get("/brands", getBrands)
 
 //CREAR UN USUARIO
 router.post("/signup",addUser)
+
+//MODIFICA LOS DATOS DE UN USUARIO
+router.put("/user/:idUser",tokenCheck,updateUser)
+
 
 //lOGEAR USUARIO
 router.post("/login",loginUser)
