@@ -27,8 +27,13 @@ const loginUser=async(req,res)=>{
     const token=jwt.sign({
         sub:usuario.id,
         nombre:usuario.nombre,
-        exp:Date.now()+60*1000,
-        tipo:usuario.tipo
+        exp:Date.now()+60*2000, //2min
+        tipo:usuario.tipo,
+        direccion:usuario.direccion,
+        telefono:usuario.telefono,
+        nit:usuario.nit,
+        correo:usuario.correo,
+        
     },secret)
 
     return res.status(200).json({token})
