@@ -15,6 +15,7 @@ const updateCarts = async (req, res) => {
       });
 
 
+
     if (!cartProduct) {
       return res.status(404).json({ error: 'CartProduct no encontrado' });
     }
@@ -24,7 +25,7 @@ const updateCarts = async (req, res) => {
 
     // Actualizar la cantidad y el total del CartProduct
     cartProduct.cantidad = cantidad;
-    cartProduct.total = total;
+    cartProduct.precioTotal = total;
     await cartProduct.save();
 
     res.status(200).json({ cartProduct });
