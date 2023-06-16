@@ -3,6 +3,15 @@ const { Cart, CartProducts, Product } = require('../db');
 const addCarts = async(req,res)=>{
     try {
         const { CartId, ProductId, cantidad} = req.body;
+        
+        if (typeof CartId !== 'string' || !isValidUUID(CartId)) {
+          return res.status(400).json({ error: 'CartId debe ser una cadena de texto válida (UUID)' });
+        }
+    
+        // Verificar si ProductId es una cadena de texto válida (UUID)
+        if (typeof ProductId !== 'string' || !isValidUUID(ProductId)) {
+          return res.status(400).json({ error: 'ProductId debe ser una cadena de texto válida (UUID)' });
+        }
     
         // Verificar si el carrito existe
         const cart = await Cart.findByPk(CartId);
