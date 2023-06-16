@@ -26,7 +26,7 @@ googleRouter.get('/callback', (req, res, next) => {
       const { displayName, emails, accessToken, refreshToken, id } = user;
       User.findOne({ where: { correo: emails[0].value } })
         .then(existingUser => {
-          if (existingUser&&existingUser.enable) {
+          if (existingUser) {
             const userData = {
               correo: existingUser.correo,
               nombre: existingUser.nombre,
@@ -38,7 +38,7 @@ googleRouter.get('/callback', (req, res, next) => {
             return res.redirect(redirectUrl); //definir con el front que ruta vamos a mostrar para decirle al cliente que ya existe
           }
   
-          User.create({ nombre: displayName, correo: emails[0].value, googleToken: accessToken, refreshToken, tipo: false, enable:true })
+          User.create({ nombre: displayName, correo: emails[0].value, googleToken: accessToken, refreshToken, tipo: false})
             .then(newUser => {
               const userData = {
                 correo: newUser.correo,
