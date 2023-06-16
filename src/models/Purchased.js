@@ -6,12 +6,33 @@ module.exports = (sequelize) => {
       type: DataTypes.UUID,
       defaultValue:DataTypes.UUIDV4,
       primaryKey: true,
-      allowNull: false
+      allowNull: false,
+      unique: true
     },
   
-    precioTotal: {
-      type: DataTypes.INTEGER,
+    idCompra: {
+      type: DataTypes.BIGINT,
+      allowNull: false
+    },
+
+    idProducto:{
+      type: DataTypes.UUID,
       allowNull: false,
+    
+    },
+    precio:{
+      type: DataTypes.INTEGER
+    },
+    estado:{
+      type: DataTypes.STRING,
+      allowNull:false,
+      defaultValue: 'Pagado'
+    },
+    cantidad:{
+      type: DataTypes.INTEGER,
+      allowNull:false,
+      defaultValue:1
     }
+
   }, {timestamps: false});
 };
