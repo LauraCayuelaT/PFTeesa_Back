@@ -20,7 +20,7 @@ googleLoginRouter.get('/callback', passport.authenticate('google-login', { failu
 
   const existingUser = await User.findOne({ where: { correo: emails[0].value } });
   try{
-  if(existingUser&&existingUser.enable){
+  if(existingUser){
     const userData = {
       correo: existingUser.correo,
       nombre: existingUser.nombre,
