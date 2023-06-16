@@ -15,6 +15,65 @@ const createOrder = async (req,res)=>{
     // id Usuario -> id Carrito que le corresponde
     // Cart Productos traigo todos los productos y cantidades sumar el total de precio de todos los productos
 
+    ///// SOLO PARA RPUEBAS EN EL BACK
+// const{ Cart }=require("../db")
+// const{ User }=require("../db")
+// const{ CartProducts }=require("../db")
+// const{ Product }=require("../db")
+
+// const uuidRegExp = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+// const transformCart=(user)=>{
+
+//   return user.Cart.CartProducts.map( item=>{
+
+//           return{
+//               nombre:item.Product.nombre,
+//               precio:item.Product.precio,
+//               cantidad:item.cantidad,
+//               total:(item.cantidad)*item.Product.precio
+//               }
+//           })
+//   }
+
+
+
+// const getCartProducts=async(req,res)=>{
+
+//     try {
+//         const {idUser}=req.params
+//         if(!uuidRegExp.test(idUser)) return res.status(400).json({message: "Id invalido"}) //Validacion de uuid
+
+//         const user = await User.findByPk(idUser, {
+//             // where:{id:idUser},
+//             attributes:[],
+//             include: {
+//               model: Cart,
+//               include: {
+//                 model: CartProducts,
+//                 include: {
+//                   model: Product,
+//                   attributes: ['nombre','precio'],
+//                 },
+//                 attributes: ['cantidad', 'ProductId'],
+//               },
+//             },
+//           });
+
+
+//         if(user){
+//             res.status(200).json( transformCart(user));
+//         }else{
+//             res.status(404).json({message:"no se encontro una mierda"})
+//         }
+//     } catch (error) {
+//         res.status(400).json({message:error.message})
+//     }
+
+// }
+
+// module.exports=getCartProducts
+
     let precioTotal = 0;
     const carrito = await Cart.findOne({where:{UserId: id}});
     const products = await CartProducts.findAll({where:{CartId:carrito.dataValues.id}, attributes: ['precioTotal']})
@@ -27,23 +86,23 @@ const createOrder = async (req,res)=>{
     const result = await mercadopago.preferences.create({
         
         items: [{
-            title: 'Teesa',
+            title: 'Productos Teesa',
             unit_price: Number(precioTotal),
             quantity:1,
             currency_id: "COP"
 
         }],
         back_urls: {
-            success: "https://pf-teesa-front.vercel.app/checkoutsuccess",
+            success: `http://localhost:3001/mercadopago/checkoutsuccess?total=${precioTotal}&user=${id}&carrito=${carrito.dataValues.id}`,
             failure: "https://pf-teesa-front.vercel.app/checkoutpending",
             pending: "https://pf-teesa-front.vercel.app/checkoutfailed"
         },
-        notification_url: "https://9010-2800-484-e882-90e4-90d2-8986-317b-11aa.ngrok.io/mercadopago/webhook"
+        // notification_url: `https://b322-2800-484-e882-90e4-8846-636f-d7c7-fff8.ngrok.io/mercadopago/webhook/`
     })
 
     
 
-    res.send(result.body)}
+    res.status(202).json(result.body.init_point)}
     catch(err){send.sendStatus(400).json({message:err.message})}
 
 };
