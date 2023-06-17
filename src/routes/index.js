@@ -26,6 +26,8 @@ const tokenCheck=require("./tokenCheck")
 const session = require("express-session");
 const passport = require("passport");
 const flash = require("express-flash");
+const paymentRouter = require("./payment");
+
 require("../auth")
 
 router.use(flash())         
@@ -45,12 +47,15 @@ router.get("/products", getAllProducts)
 router.get("/detail/:idProduct",getDetail)
 
 //AGREGA NUEVOS PRODUCTOS A LA BASE DE DATOS
+// Protección requerida tipo usuario solo ADMIN
 router.post("/products", addProducts)
 
 //ELIMINA UN PRODUCTO SEGUN SU ID
+// Protección requerida tipo usuario solo ADMIN
 router.delete("/products/:idProduct",deleteProduct)
 
 //MODIFICA LOS VALORES DE UN PRODUCTO GUARDADO
+// Protección requerida tipo usuario solo ADMIN
 router.put("/detail/:idProduct",updateProduct)
 
 //TRAE TODAS LAS MARCAS 
@@ -67,6 +72,7 @@ router.put("/user/:idUser",tokenCheck,updateUser)
 router.post("/login",loginUser)
 
 //Traer todos los usuarios
+// Protección requerida tipo usuario solo ADMIN
 router.get("/users",getAllUsers)
 
 //Routa protegida para pruebas del token
@@ -85,20 +91,33 @@ router.use("/auth/google", googleLoginRouter);
 router.post("/cartGuest", createCart)
 
 //agrega a un cart la informacion del producto, pasando por body ProductId, CartId y cantidad de ese producto
+//Proteger si el existe usuario logeado
 router.post("/cart", addCarts)
 
 //obtiene un cart por usuario con query cartId
+//Proteger si el existe usuario logeado
 router.get("/cart", getCart)
 
 //borra un cart por params cartProductId
+//Proteger si el existe usuario logeado
 router.delete("/cart/:cartProductId", deleteCarts)
 
 //modifica un cart por params cartProductId
+//Proteger si el existe usuario logeado
 router.put("/cart/:cartProductId", updateCarts)
+
 
 
 ///////////////SOLO PARA PRUEBAS EN EL BACK////////////////////
 router.get("/cart_products/:idUser", getCartProducts)
+
+// MERCADO PAGO
+
+router.use("/mercadopago", paymentRouter)
+
+
+
+
 
 module.exports = router;
 

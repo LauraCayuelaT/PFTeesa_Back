@@ -1,17 +1,38 @@
 // const { DataTypes } = require('sequelize');
 
-// module.exports = (sequelize) => {
-//   sequelize.define('Purchased', {
-//     id: {
-//       type: DataTypes.UUID,
-//       defaultValue:DataTypes.UUIDV4,
-//       primaryKey: true,
-//       allowNull: false
-//     },
+module.exports = (sequelize) => {
+  sequelize.define('Purchased', {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue:DataTypes.UUIDV4,
+      primaryKey: true,
+      allowNull: false,
+      unique: true
+    },
   
-//     precioTotal: {
-//       type: DataTypes.INTEGER,
-//       allowNull: false,
-//     }
-//   }, {timestamps: false});
-// };
+    idCompra: {
+      type: DataTypes.BIGINT,
+      allowNull: false
+    },
+
+    idProducto:{
+      type: DataTypes.UUID,
+      allowNull: false,
+    
+    },
+    precio:{
+      type: DataTypes.INTEGER
+    },
+    estado:{
+      type: DataTypes.STRING,
+      allowNull:false,
+      defaultValue: 'Pagado'
+    },
+    cantidad:{
+      type: DataTypes.INTEGER,
+      allowNull:false,
+      defaultValue:1
+    }
+
+  }, {timestamps: false});
+};

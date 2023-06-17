@@ -29,7 +29,8 @@ googleRouter.get('/callback', (req, res, next) => {
           if (existingUser) {
             const userData = {
               correo: existingUser.correo,
-              nombre: existingUser.nombre
+              nombre: existingUser.nombre,
+              id: existingUser.id
             }
         
             const queryParams = new URLSearchParams(userData).toString();
@@ -37,11 +38,12 @@ googleRouter.get('/callback', (req, res, next) => {
             return res.redirect(redirectUrl); //definir con el front que ruta vamos a mostrar para decirle al cliente que ya existe
           }
   
-          User.create({ nombre: displayName, correo: emails[0].value, googleToken: accessToken, refreshToken, tipo: false })
+          User.create({ nombre: displayName, correo: emails[0].value, googleToken: accessToken, refreshToken, tipo: false})
             .then(newUser => {
               const userData = {
                 correo: newUser.correo,
-                nombre: newUser.nombre
+                nombre: newUser.nombre,
+                id: newUser.id
             }
             const queryParams = new URLSearchParams(userData).toString();
             const redirectUrl = `https://pf-teesa-front.vercel.app/home?${queryParams}`;
@@ -90,17 +92,6 @@ googleRouter.get('/api/getErrorMessage', (req, res) => {
 
 
 
-// //LOGOUT
-
-// router.get('/logout', (req,res)=>{
-//     req.logout(function(err) {
-//         if (err) { console.log("Error al destruir la sesion: ",err )} 
-//         res.redirect('/'); });
-
-//     req.session.destroy()
-//     ;
-//     res.send('Adios')
-// })
 
 
 module.exports = googleRouter
