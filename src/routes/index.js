@@ -18,6 +18,8 @@ const getCart = require("../Controllers/getCart")
 const addCarts = require("../Controllers/addCarts")
 const updateUser=require("../Controllers/updateUser")
 
+const getCartProducts=require("../Controllers/getCartProducts")
+
 const loginCheck=require ("../Controllers/loginCheck")
 const tokenCheck=require("./tokenCheck")
 
@@ -95,7 +97,8 @@ router.delete("/cart/:cartProductId", deleteCarts)
 router.put("/cart/:cartProductId", updateCarts)
 
 
-
+///////////////SOLO PARA PRUEBAS EN EL BACK////////////////////
+router.get("/cart_products/:idUser", getCartProducts)
 
 module.exports = router;
 

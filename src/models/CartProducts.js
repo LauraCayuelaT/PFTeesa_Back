@@ -12,6 +12,9 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       defaultValue:1,
       allowNull: true,
+    },
+    precioTotal:{
+      type: DataTypes.INTEGER
     }
   }, {timestamps: false});
 };
