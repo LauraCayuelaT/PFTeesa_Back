@@ -1,12 +1,13 @@
-const { Cart, CartProducts, Product } = require('../db');
+const { CartGuest, CartGuestProducts, Product } = require('../db');
 
-const addCarts = async(req,res)=>{
+const createCartGuest = async(req,res)=>{
     try {
-        const { CartId, ProductId, cantidad} = req.body;
+        const { CartGuestId, ProductId, cantidad} = req.body;
+        
     
         // Verificar si el carrito existe
-        const cart = await Cart.findByPk(CartId);
-        if (!cart) {
+        const cartGuest = await CartGuest.findByPk(CartGuestId);
+        if (!cartGuest) {
           return res.status(404).json({ error: 'Carrito no encontrado' });
         }
     
@@ -17,33 +18,33 @@ const addCarts = async(req,res)=>{
         }
         const precioTotal = product.precio * cantidad;
         // Crear o actualizar el registro en la tabla CartProducts
-        let cartProduct = await CartProducts.findOne({
+        let cartGuestProduct = await CartGuestProducts.findOne({
           where: {
-            CartId,
+            CartGuestId,
             ProductId,
           },
         });
     
-        if (cartProduct) {
+        if (cartGuestProduct) {
           // Si el producto ya está en el carrito, actualizar la cantidad
-          cartProduct.cantidad += cantidad;
-          cartProduct.precioTotal = product.precio * cartProduct.cantidad;
-          await cartProduct.save();
+          cartGuestProduct.cantidad += cantidad;
+          cartGuestProduct.precioTotal = product.precio * cartGuestProduct.cantidad;
+          await cartGuestProduct.save();
         } else {
           // Si el producto no está en el carrito, crear un nuevo registro
-          cartProduct = await CartProducts.create({
-            CartId,
+          cartGuestProduct = await CartGuestProducts.create({
+            CartGuestId,
             ProductId,
             cantidad,
             precioTotal
           });
         }
     
-        res.status(200).json({ cartProduct });
+        res.status(200).json({ cartGuestProduct });
       } catch (error) {
         console.error('Error al agregar producto al carrito:', error);
         res.status(500).json({ error: 'Error interno del servidor' });
       }
     }
     
-module.exports = addCarts
+module.exports = createCartGuest
