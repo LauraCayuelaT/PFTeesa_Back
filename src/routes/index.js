@@ -14,7 +14,11 @@ const loginUser=require("../Controllers/loginUser");
 const deleteCarts=require("../Controllers/deleteCarts")
 const updateCarts=require("../Controllers/updateCarts")
 const createCart=require("../Controllers/createCart")
+const createCartGuest=require("../Controllers/createCartGuest")
 const getCart = require("../Controllers/getCart")
+const getCartGuest = require("../Controllers/getCartGuest")
+const updateCartGuest = require("../Controllers/updateCartGuest")
+const deleteCartGuest = require("../Controllers/deleteCartGuest")
 const addCarts = require("../Controllers/addCarts")
 const updateUser=require("../Controllers/updateUser")
 
@@ -89,6 +93,14 @@ router.use("/auth/google", googleLoginRouter);
 
 //crea un cart, es para que un usuario sin registrarse tenga un CartId 
 router.post("/cartGuest", createCart)
+
+router.post("/cartGuestProducts", createCartGuest)
+
+router.get("/cartGuestProducts", getCartGuest)
+
+router.delete("/cartGuestProducts/cartGuestProductsId", deleteCartGuest)
+
+router.put("/cartGuestProducts/cartGuestProductsId", updateCartGuest)
 
 //agrega a un cart la informacion del producto, pasando por body ProductId, CartId y cantidad de ese producto
 //Proteger si el existe usuario logeado

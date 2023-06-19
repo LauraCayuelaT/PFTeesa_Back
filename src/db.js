@@ -8,6 +8,8 @@ const PurchasedModel=require("./models/Purchased")
 const PurchasedProductModel=require("./models/PurchasedProduct")
 const ReviewModel = require('./models/Reviews')
 const CartProductsModel=require("./models/CartProducts")
+const CartGuestModel=require("./models/CartGuest")
+const CartGuestProductsModel=require("./models/CartGuestProducts")
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, BD, DB_DEPLOYRAIL } = process.env;
 // PARA DEPLOY CON RENDER
@@ -25,7 +27,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, BD, DB_DEPLOYRAIL } = process.
 // )
 
 // PARA DEPLOY CON RAILWAY
-const sequelize = new Sequelize(
+ const sequelize = new Sequelize(
    DB_DEPLOYRAIL,
    {
       logging: false, 
@@ -34,13 +36,13 @@ const sequelize = new Sequelize(
    }  
 ) 
 
-//  const sequelize = new Sequelize(
-//     `postgres:${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${BD}`,
-//     {
-//        logging: false, 
-//        native: false
-//     }
-//  )
+ /*  const sequelize = new Sequelize(
+     `postgres:${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${BD}`,
+     {
+        logging: false, 
+        native: false
+     }
+  ) */
 
 UserModel(sequelize);
 ProductModel(sequelize);
@@ -50,14 +52,22 @@ ServiceModel(sequelize)
 //PurchasedProductModel(sequelize)
 ReviewModel(sequelize)
 CartProductsModel(sequelize);
+CartGuestModel(sequelize);
+CartGuestProductsModel(sequelize);
 
-const { User, Cart, Product, CartProducts,  Service, Purchased, PurchasedProduct, Review } = sequelize.models;
+const { User, Cart, CartGuest, CartGuestProducts, Product, CartProducts,  Service, Purchased, PurchasedProduct, Review } = sequelize.models;
 User.hasOne(Cart)
 Cart.belongsTo(User)
 Cart.hasMany(CartProducts)
 CartProducts.belongsTo(Cart)
 CartProducts.belongsTo(Product)
 Product.hasMany(CartProducts)
+
+CartGuest.hasMany(CartGuestProducts)
+CartGuestProducts.belongsTo(CartGuest)
+CartGuestProducts.belongsTo(Product)
+Product.hasMany(CartGuestProducts)
+
 
 User.hasMany(Service)
 Service.belongsTo(User)
@@ -67,6 +77,11 @@ Service.belongsTo(User)
 //PurchasedProduct.belongsTo(Product)
 //Purchased.hasMany(PurchasedProduct)
 //PurchasedProduct.belongsTo(Purchased)
+
+CartGuest.hasMany(CartGuestProducts)
+CartGuestProducts.belongsTo(CartGuest)
+CartGuestProducts.belongsTo(Product)
+Product.hasMany(CartGuestProducts)
 
 User.belongsToMany(Product, {through: Review});
 Product.belongsToMany(User, {through: Review});
