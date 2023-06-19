@@ -14,12 +14,6 @@ module.exports = (sequelize) => {
       allowNull: false,
       unique: false
     },
-
-    idProducto:{
-      type: DataTypes.UUID,
-      allowNull: false
-    
-    },
     precio:{
       type: DataTypes.INTEGER
     },
@@ -32,6 +26,11 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull:false,
       defaultValue:1
+    },
+    fechaDeCompra:{
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW
     }
 
   }, {timestamps: false});
