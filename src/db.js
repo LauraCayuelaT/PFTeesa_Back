@@ -46,8 +46,8 @@ UserModel(sequelize);
 ProductModel(sequelize);
 CartModel(sequelize);
 ServiceModel(sequelize)
-PurchasedModel(sequelize)
-PurchasedProductModel(sequelize)
+//PurchasedModel(sequelize)
+//PurchasedProductModel(sequelize)
 ReviewModel(sequelize)
 CartProductsModel(sequelize);
 
@@ -61,12 +61,12 @@ Product.hasMany(CartProducts)
 
 User.hasMany(Service)
 Service.belongsTo(User)
-User.hasMany(Purchased)
-Purchased.belongsTo(User)
-Product.hasMany(PurchasedProduct)
-PurchasedProduct.belongsTo(Product)
-Purchased.hasMany(PurchasedProduct)
-PurchasedProduct.belongsTo(Purchased)
+//User.hasMany(Purchased)
+//Purchased.belongsTo(User)
+//Product.hasMany(PurchasedProduct)
+//PurchasedProduct.belongsTo(Product)
+//Purchased.hasMany(PurchasedProduct)
+//PurchasedProduct.belongsTo(Purchased)
 
 User.belongsToMany(Product, {through: Review});
 Product.belongsToMany(User, {through: Review});

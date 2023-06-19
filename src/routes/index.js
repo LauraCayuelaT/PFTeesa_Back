@@ -18,6 +18,8 @@ const getCart = require("../Controllers/getCart")
 const addCarts = require("../Controllers/addCarts")
 const updateUser=require("../Controllers/updateUser")
 
+const getCartProducts=require("../Controllers/getCartProducts")
+
 const loginCheck=require ("../Controllers/loginCheck")
 const tokenCheck=require("./tokenCheck")
 
@@ -63,7 +65,7 @@ router.get("/brands", getBrands)
 router.post("/signup",addUser)
 
 //MODIFICA LOS DATOS DE UN USUARIO
-router.put("/user/:idUser",tokenCheck,updateUser)
+router.put("/user/:idUser",updateUser)
 
 
 //lOGEAR USUARIO
@@ -105,9 +107,14 @@ router.delete("/cart/:cartProductId", deleteCarts)
 router.put("/cart/:cartProductId", updateCarts)
 
 
+
+///////////////SOLO PARA PRUEBAS EN EL BACK////////////////////
+router.get("/cart_products/:idUser", getCartProducts)
+
 // MERCADO PAGO
 
 router.use("/mercadopago", paymentRouter)
+
 
 
 
