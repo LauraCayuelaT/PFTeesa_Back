@@ -37,6 +37,7 @@ const addUser=async(req,res)=>{
             await cart.setUser(usuario); //pronto se crea el usuario se crea una cart asignado al mismo
             return res.status(200).json({usuario, cart})
         }else{
+            //Aqui va la lógica para usuario inhabilitado
             return res.status(400).json({message:"Ya existe un usario con ese correo"})
         }
 

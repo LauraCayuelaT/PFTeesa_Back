@@ -6,6 +6,7 @@ const tokenCheck= async(req, res, next)=> {
     try {
     //Asi llega el token
     //Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+    if(!req.headers.authorization) return res.status(401).json({ mensaje: 'No se proporcionó un token' });
     const token = req.headers.authorization.split(" ")[1]
 
     if (!token) {

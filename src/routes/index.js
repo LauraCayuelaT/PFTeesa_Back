@@ -14,9 +14,15 @@ const loginUser=require("../Controllers/loginUser");
 const deleteCarts=require("../Controllers/deleteCarts")
 const updateCarts=require("../Controllers/updateCarts")
 const createCart=require("../Controllers/createCart")
+const createCartGuest=require("../Controllers/createCartGuest")
 const getCart = require("../Controllers/getCart")
+const getCartGuest = require("../Controllers/getCartGuest")
+const updateCartGuest = require("../Controllers/updateCartGuest")
+const deleteCartGuest = require("../Controllers/deleteCartGuest")
 const addCarts = require("../Controllers/addCarts")
 const updateUser=require("../Controllers/updateUser")
+
+const getCartProducts=require("../Controllers/getCartProducts")
 
 const loginCheck=require ("../Controllers/loginCheck")
 const tokenCheck=require("./tokenCheck")
@@ -64,7 +70,7 @@ router.get("/brands", getBrands)
 router.post("/signup",addUser)
 
 //MODIFICA LOS DATOS DE UN USUARIO
-router.put("/user/:idUser",tokenCheck,updateUser)
+router.put("/user/:idUser",updateUser)
 
 
 //lOGEAR USUARIO
@@ -89,6 +95,14 @@ router.use("/auth/google", googleLoginRouter);
 //crea un cart, es para que un usuario sin registrarse tenga un CartId 
 router.post("/cartGuest", createCart)
 
+router.post("/cartGuestProducts", createCartGuest)
+
+router.get("/cartGuestProducts", getCartGuest)
+
+router.delete("/cartGuestProducts/cartGuestProductsId", deleteCartGuest)
+
+router.put("/cartGuestProducts/cartGuestProductsId", updateCartGuest)
+
 //agrega a un cart la informacion del producto, pasando por body ProductId, CartId y cantidad de ese producto
 //Proteger si el existe usuario logeado
 router.post("/cart", addCarts)
@@ -106,6 +120,10 @@ router.delete("/cart/:cartProductId", deleteCarts)
 router.put("/cart/:cartProductId", updateCarts)
 
 
+
+///////////////SOLO PARA PRUEBAS EN EL BACK////////////////////
+router.get("/cart_products/:idUser", getCartProducts)
+
 // MERCADO PAGO
 
 router.use("/mercadopago", paymentRouter)
@@ -113,6 +131,7 @@ router.use("/mercadopago", paymentRouter)
 //Traer todas las compras del usuario
 
 router.get("/purchase/:id", getAllPurchases)
+
 
 
 
