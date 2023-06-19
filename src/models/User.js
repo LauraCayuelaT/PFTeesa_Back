@@ -41,5 +41,6 @@ module.exports = (sequelize) => {
     refreshToken:{
       type: DataTypes.STRING
     }
+
   }, {timestamps: false});
 };

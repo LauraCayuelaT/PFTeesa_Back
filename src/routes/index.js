@@ -25,6 +25,7 @@ const session = require("express-session");
 const passport = require("passport");
 const flash = require("express-flash");
 const paymentRouter = require("./payment");
+const getAllPurchases = require("../Controllers/getAllPurchases")
 
 require("../auth")
 
@@ -108,6 +109,10 @@ router.put("/cart/:cartProductId", updateCarts)
 // MERCADO PAGO
 
 router.use("/mercadopago", paymentRouter)
+
+//Traer todas las compras del usuario
+
+router.get("/purchase/:id", getAllPurchases)
 
 
 

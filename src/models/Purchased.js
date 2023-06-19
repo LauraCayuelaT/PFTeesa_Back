@@ -6,18 +6,18 @@ module.exports = (sequelize) => {
       type: DataTypes.UUID,
       defaultValue:DataTypes.UUIDV4,
       primaryKey: true,
-      allowNull: false,
-      unique: true
+      allowNull: false  
     },
   
     idCompra: {
       type: DataTypes.BIGINT,
-      allowNull: false
+      allowNull: false,
+      unique: false
     },
 
     idProducto:{
       type: DataTypes.UUID,
-      allowNull: false,
+      allowNull: false
     
     },
     precio:{
