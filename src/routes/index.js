@@ -65,7 +65,7 @@ router.get("/brands", getBrands)
 router.post("/signup",addUser)
 
 //MODIFICA LOS DATOS DE UN USUARIO
-router.put("/user/:idUser",tokenCheck,updateUser)
+router.put("/user/:idUser",updateUser)
 
 
 //lOGEAR USUARIO
