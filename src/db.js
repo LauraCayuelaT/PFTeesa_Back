@@ -27,7 +27,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, BD, DB_DEPLOYRAIL } = process.
 // )
 
 // PARA DEPLOY CON RAILWAY
-const sequelize = new Sequelize(
+ const sequelize = new Sequelize(
    DB_DEPLOYRAIL,
    {
       logging: false, 
@@ -36,13 +36,13 @@ const sequelize = new Sequelize(
    }  
 ) 
 
-//  const sequelize = new Sequelize(
-//     `postgres:${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${BD}`,
-//     {
-//        logging: false, 
-//        native: false
-//     }
-//  )
+ /*  const sequelize = new Sequelize(
+     `postgres:${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${BD}`,
+     {
+        logging: false, 
+        native: false
+     }
+  ) */
 
 UserModel(sequelize);
 ProductModel(sequelize);
@@ -55,7 +55,6 @@ CartProductsModel(sequelize);
 CartGuestModel(sequelize);
 CartGuestProductsModel(sequelize);
 
-
 const { User, Cart, CartGuest, CartGuestProducts, Product, CartProducts,  Service, Purchased, PurchasedProduct, Review } = sequelize.models;
 User.hasOne(Cart)
 Cart.belongsTo(User)
@@ -63,6 +62,11 @@ Cart.hasMany(CartProducts)
 CartProducts.belongsTo(Cart)
 CartProducts.belongsTo(Product)
 Product.hasMany(CartProducts)
+
+CartGuest.hasMany(CartGuestProducts)
+CartGuestProducts.belongsTo(CartGuest)
+CartGuestProducts.belongsTo(Product)
+Product.hasMany(CartGuestProducts)
 
 User.hasMany(Service)
 Service.belongsTo(User)
