@@ -62,7 +62,7 @@ Cart.hasMany(CartProducts)
 CartProducts.belongsTo(Cart)
 CartProducts.belongsTo(Product)
 Product.hasMany(CartProducts)
-Purchased.belongsTo(Product, {foreignKey:'ProductId', as:'product'})
+Purchased.belongsTo(Product)
 Product.hasMany(Purchased)
 
 CartGuest.hasMany(CartGuestProducts)
