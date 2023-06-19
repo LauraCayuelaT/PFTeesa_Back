@@ -68,6 +68,7 @@ CartGuestProducts.belongsTo(CartGuest)
 CartGuestProducts.belongsTo(Product)
 Product.hasMany(CartGuestProducts)
 
+
 User.hasMany(Service)
 Service.belongsTo(User)
 //User.hasMany(Purchased)
