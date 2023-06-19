@@ -93,17 +93,20 @@ const createOrder = async (req,res)=>{
 
         }],
         back_urls: {
-            success: `http://localhost:3001/mercadopago/checkoutsuccess?total=${precioTotal}&user=${id}&carrito=${carrito.dataValues.id}`,
+            success: "https://pf-teesa-front.vercel.app/checkoutsuccess",
             failure: "https://pf-teesa-front.vercel.app/checkoutpending",
             pending: "https://pf-teesa-front.vercel.app/checkoutfailed"
         },
-        // notification_url: `https://b322-2800-484-e882-90e4-8846-636f-d7c7-fff8.ngrok.io/mercadopago/webhook/`
+        external_reference: `${id},${carrito.dataValues.id}`,
+        notification_url: 'https://servidor-teesa.onrender.com/mercadopago/webhook'
     })
 
     
 
     res.status(202).json(result.body.init_point)}
-    catch(err){send.sendStatus(400).json({message:err.message})}
+    catch(err){
+        console.log(err)
+        res.sendStatus(400).json({message:err.message})}
 
 };
 
