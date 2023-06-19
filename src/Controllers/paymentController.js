@@ -42,6 +42,7 @@ const createOrder = async (req,res)=>{
         },
         external_reference: `${id},${carrito.dataValues.id}`,
         notification_url: 'https://servidor-teesa.onrender.com/mercadopago/webhook'
+        // notification_url: 'https://35d9-2800-484-e882-90e4-e450-ad55-4d12-f2dc.ngrok.io/mercadopago/webhook'
     })
 
     

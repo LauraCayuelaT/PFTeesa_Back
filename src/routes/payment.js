@@ -35,7 +35,7 @@ paymentRouter.post('/webhook', async (req,res)=>{
 
         const productos = await CartProducts.findAll({where:{CartId:cartId}, raw:true}) 
         productos.map(async (prod)=>{
-            await Purchased.create({idCompra:data.body.order.id, UserId: userId, idProducto: prod.ProductId, precio: prod.precioTotal, cantidad: prod.cantidad}, {include: [User]})
+            await Purchased.create({idCompra:data.body.order.id, UserId: userId, ProductId: prod.ProductId, precio: prod.precioTotal, cantidad: prod.cantidad }, {include: [{model: User}, {model: Product}]})
         })
 
 
