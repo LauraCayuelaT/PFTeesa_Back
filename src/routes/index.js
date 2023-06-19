@@ -31,7 +31,9 @@ const session = require("express-session");
 const passport = require("passport");
 const flash = require("express-flash");
 const paymentRouter = require("./payment");
-const getAllPurchases = require("../Controllers/getAllPurchases")
+const getAllPurchases = require("../Controllers/getAllPurchases");
+
+
 
 require("../auth")
 
@@ -40,9 +42,13 @@ router.use(session({
       secret: 'proyectoTeesa',
       resave: false,
       saveUninitialized: false
-    }));;
+}));;
 router.use(passport.initialize());
 router.use(passport.session());
+
+
+
+
  
 
 // TRAE TODOS LOS PRODUCTOS DE LA BASE DE DATOS
