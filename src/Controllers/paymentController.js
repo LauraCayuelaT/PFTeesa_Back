@@ -15,7 +15,49 @@ const createOrder = async (req,res)=>{
     // id Usuario -> id Carrito que le corresponde
     // Cart Productos traigo todos los productos y cantidades sumar el total de precio de todos los productos
 
-    ///// SOLO PARA RPUEBAS EN EL BACK
+    
+
+    let precioTotal = 0;
+    const carrito = await Cart.findOne({where:{UserId: id}});
+    const products = await CartProducts.findAll({where:{CartId:carrito.dataValues.id}, attributes: ['precioTotal']})
+    products.map(prod=>precioTotal += prod.dataValues.precioTotal)
+
+    
+
+
+
+    const result = await mercadopago.preferences.create({
+        
+        items: [{
+            title: 'Productos Teesa',
+            unit_price: Number(precioTotal),
+            quantity:1,
+            currency_id: "COP"
+
+        }],
+        back_urls: {
+            success: "https://pf-teesa-front.vercel.app/checkoutsuccess",
+            failure: "https://pf-teesa-front.vercel.app/checkoutpending",
+            pending: "https://pf-teesa-front.vercel.app/checkoutfailed"
+        },
+        external_reference: `${id},${carrito.dataValues.id}`,
+        notification_url: 'https://servidor-teesa.onrender.com/mercadopago/webhook'
+    })
+
+    
+
+    res.status(202).json(result.body.init_point)}
+    catch(err){
+        console.log(err)
+        res.sendStatus(400).json({message:err.message})}
+
+};
+
+
+module.exports = createOrder
+
+
+///// SOLO PARA RPUEBAS EN EL BACK
 // const{ Cart }=require("../db")
 // const{ User }=require("../db")
 // const{ CartProducts }=require("../db")
@@ -61,7 +103,7 @@ const createOrder = async (req,res)=>{
 //           });
 
 
-//         if(user){
+//         if(user)
 //             res.status(200).json( transformCart(user));
 //         }else{
 //             res.status(404).json({message:"no se encontro una mierda"})
@@ -73,42 +115,3 @@ const createOrder = async (req,res)=>{
 // }
 
 // module.exports=getCartProducts
-
-    let precioTotal = 0;
-    const carrito = await Cart.findOne({where:{UserId: id}});
-    const products = await CartProducts.findAll({where:{CartId:carrito.dataValues.id}, attributes: ['precioTotal']})
-    products.map(prod=>precioTotal += prod.dataValues.precioTotal)
-
-    
-
-
-
-    const result = await mercadopago.preferences.create({
-        
-        items: [{
-            title: 'Productos Teesa',
-            unit_price: Number(precioTotal),
-            quantity:1,
-            currency_id: "COP"
-
-        }],
-        back_urls: {
-            success: "https://pf-teesa-front.vercel.app/checkoutsuccess",
-            failure: "https://pf-teesa-front.vercel.app/checkoutpending",
-            pending: "https://pf-teesa-front.vercel.app/checkoutfailed"
-        },
-        external_reference: `${id},${carrito.dataValues.id}`,
-        notification_url: 'https://servidor-teesa.onrender.com/mercadopago/webhook'
-    })
-
-    
-
-    res.status(202).json(result.body.init_point)}
-    catch(err){
-        console.log(err)
-        res.sendStatus(400).json({message:err.message})}
-
-};
-
-
-module.exports = createOrder
