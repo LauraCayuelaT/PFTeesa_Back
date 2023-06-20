@@ -7,6 +7,11 @@ module.exports = (sequelize) => {
     },
     estrellas:{
         type:DataTypes.INTEGER
+    },
+    fecha:{
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW 
     }
    
   }, {timestamps: false});

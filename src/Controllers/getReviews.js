@@ -42,7 +42,7 @@ const getReviews = async (req,res)=>{
 
             console.log(avgStars)
 
-            res.status(202).json({reviews,avgStars})
+            res.status(202).json({reviews,avgStars, users})
             
     } catch (error) {
         res.status(500).json({message:error.message})

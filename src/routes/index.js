@@ -32,7 +32,8 @@ const paymentRouter = require("./payment");
 const getAllPurchases = require("../Controllers/getAllPurchases");
 const addReview = require("../Controllers/addReview");
 const getReviews = require("../Controllers/getReviews");
-const findCartId = require('../Controllers/findCartId')
+const findCartId = require('../Controllers/findCartId');
+const getUserProduct = require("../Controllers/getUserProduct")
 require("../auth")
 
 //Middleware Ruta reviews
@@ -145,6 +146,7 @@ router.get("/purchase/:id", getAllPurchases)
 
 //------------REVIEWS----------//
 router.post('/reviews/:userId',reviewUser, addReview)
+router.get('/reviews/validate/:userId',getUserProduct)
 router.get('/reviews/:productId', getReviews)
 
 
