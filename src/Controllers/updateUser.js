@@ -1,4 +1,7 @@
 const{ User }=require("../db")
+const jwt= require('jsonwebtoken');
+const secret=process.env.SECRET
+
 const uuidRegExp = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 const updateUser=async(req,res)=>{
@@ -14,7 +17,20 @@ const updateUser=async(req,res)=>{
         user.telefono=telefono;
         user.nit=Number(nit);
         const updatedUser= await user.save();
-        res.status(200).json(updatedUser);
+        //Regenerar token con nueva info///
+        const token=jwt.sign({
+            sub:user.id,
+            nombre:user.nombre,
+            exp:Date.now()+60*2000, //2min
+            tipo:user.tipo,
+            direccion:user.direccion,
+            telefono:user.telefono,
+            nit:user.nit,
+            correo:user.correo,         
+        },secret)
+
+        return res.status(200).json({token})
+        //res.status(200).json(updatedUser);
     }
     else{
         res.status(404).json({message:"Usuario no encontrado(id invalido)"})
