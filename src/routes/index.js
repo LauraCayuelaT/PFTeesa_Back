@@ -105,9 +105,9 @@ router.post("/cartGuestProducts", createCartGuest)
 
 router.get("/cartGuestProducts", getCartGuest)
 
-router.delete("/cartGuestProducts/cartGuestProductsId", deleteCartGuest)
+router.delete("/cartGuestProducts/:cartGuestProductId", deleteCartGuest)
 
-router.put("/cartGuestProducts/cartGuestProductsId", updateCartGuest)
+router.put("/cartGuestProducts/:cartGuestProductId", updateCartGuest)
 
 //agrega a un cart la informacion del producto, pasando por body ProductId, CartId y cantidad de ese producto
 //Proteger si el existe usuario logeado
