@@ -37,8 +37,8 @@ const createOrder = async (req,res)=>{
         }],
         back_urls: {
             success: "https://pf-teesa-front.vercel.app/checkoutsuccess",
-            failure: "https://pf-teesa-front.vercel.app/checkoutpending",
-            pending: "https://pf-teesa-front.vercel.app/checkoutfailed"
+            failure: "https://pf-teesa-front.vercel.app/checkoutfailed",
+            pending: "https://pf-teesa-front.vercel.app/checkoutpending"
         },
         external_reference: `${id},${carrito.dataValues.id}`,
         notification_url: 'https://servidor-teesa.onrender.com/mercadopago/webhook'
