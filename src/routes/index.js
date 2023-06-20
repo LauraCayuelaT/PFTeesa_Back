@@ -21,21 +21,21 @@ const updateCartGuest = require("../Controllers/updateCartGuest")
 const deleteCartGuest = require("../Controllers/deleteCartGuest")
 const addCarts = require("../Controllers/addCarts")
 const updateUser=require("../Controllers/updateUser")
-
 const getCartProducts=require("../Controllers/getCartProducts")
-
 const loginCheck=require ("../Controllers/loginCheck")
 const tokenCheck=require("./tokenCheck")
-
 const session = require("express-session");
 const passport = require("passport");
 const flash = require("express-flash");
 const paymentRouter = require("./payment");
 const getAllPurchases = require("../Controllers/getAllPurchases");
-
-
-
+const addReview = require("../Controllers/addReview");
+const getReviews = require("../Controllers/getReviews");
+const findCartId = require('../Controllers/findCartId')
 require("../auth")
+
+//Middleware Ruta reviews
+const reviewUser = require("../middleware/reviewUser")
 
 router.use(flash())         
 router.use(session({
@@ -129,14 +129,19 @@ router.put("/cart/:cartProductId", updateCarts)
 
 ///////////////SOLO PARA PRUEBAS EN EL BACK////////////////////
 router.get("/cart_products/:idUser", getCartProducts)
+router.get('/cart/:idUser', findCartId)
 
 // MERCADO PAGO
 
 router.use("/mercadopago", paymentRouter)
 
-//Traer todas las compras del usuario
+//-------COMPRAS USUARIO-------//
 
 router.get("/purchase/:id", getAllPurchases)
+
+//------------REVIEWS----------//
+router.post('/reviews/:userId',reviewUser, addReview)
+router.get('/reviews/:productId', getReviews)
 
 
 
