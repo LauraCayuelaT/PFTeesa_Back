@@ -26,7 +26,7 @@ googleRouter.get('/callback', (req, res, next) => {
       const { displayName, emails, accessToken, refreshToken, id } = user;
       User.findOne({ where: { correo: emails[0].value } })
         .then(existingUser => {
-          if (existingUser) {
+          if (existingUser&&existingUser.enable) {
             const userData = {
               correo: existingUser.correo,
               nombre: existingUser.nombre,

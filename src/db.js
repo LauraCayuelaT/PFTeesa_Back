@@ -88,6 +88,7 @@ Product.hasMany(CartGuestProducts)
 User.belongsToMany(Product, {through: Review});
 Product.belongsToMany(User, {through: Review});
 Review.belongsTo(User);
+Review.belongsTo(Product);
 
 
 module.exports = {
