@@ -26,6 +26,8 @@ const getCartProducts=require("../Controllers/getCartProducts")
 
 const loginCheck=require ("../Controllers/loginCheck")
 const tokenCheck=require("./tokenCheck")
+const handleEnableUser=require("../Controllers/handleEnableUser.js")
+
 
 const session = require("express-session");
 const passport = require("passport");
@@ -85,6 +87,9 @@ router.post("/login",loginUser)
 //Traer todos los usuarios
 // Protección requerida tipo usuario solo ADMIN
 router.get("/users",getAllUsers)
+
+//BORRADO LOGICO DE USUARIO (falta validar que sea un admin)
+router.put("/enable/:idUser",handleEnableUser)
 
 //Routa protegida para pruebas del token
 router.get("/loginCheck",tokenCheck,loginCheck)
