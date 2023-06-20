@@ -1,5 +1,6 @@
+
 const {Review, User, Product} = require("../db");
-const Reviews = require("../models/Reviews");
+
 
 
 const getReviews = async (req,res)=>{
