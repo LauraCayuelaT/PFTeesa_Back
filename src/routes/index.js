@@ -33,7 +33,8 @@ const getAllPurchases = require("../Controllers/getAllPurchases");
 const addReview = require("../Controllers/addReview");
 const getReviews = require("../Controllers/getReviews");
 const findCartId = require('../Controllers/findCartId');
-const getUserProduct = require("../Controllers/getUserProduct")
+const getUserProduct = require("../Controllers/getUserProduct");
+const getUserByID = require("../Controllers/getUserByID")
 require("../auth")
 
 //Middleware Ruta reviews
@@ -87,6 +88,7 @@ router.post("/login",loginUser)
 //Traer todos los usuarios
 // Protección requerida tipo usuario solo ADMIN
 router.get("/users",getAllUsers)
+router.get("/users/:id", getUserByID)
 
 //BORRADO LOGICO DE USUARIO (falta validar que sea un admin)
 router.put("/enable/:idUser",handleEnableUser)
