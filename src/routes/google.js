@@ -25,17 +25,25 @@ googleRouter.get('/callback', (req, res, next) => {
   
       const { displayName, emails, accessToken, refreshToken, id } = user;
       User.findOne({ where: { correo: emails[0].value } })
-        .then(existingUser => {
-          if (existingUser&&existingUser.enable) {
+        .then(async (existingUser) => {
+          if (existingUser) {
+           
             const userData = {
               correo: existingUser.correo,
               nombre: existingUser.nombre,
               id: existingUser.id
             }
-        
+            if(existingUser.enable){
             const queryParams = new URLSearchParams(userData).toString();
             const redirectUrl = `https://pf-teesa-front.vercel.app/home?${queryParams}`;
             return res.redirect(redirectUrl); //definir con el front que ruta vamos a mostrar para decirle al cliente que ya existe
+          }
+            else {
+              await User.update({enable:true}, {where:{correo:emails[0].value }});
+              const queryParams = new URLSearchParams(userData).toString();
+              const redirectUrl = `https://pf-teesa-front.vercel.app/home?${queryParams}`;
+              return res.redirect(redirectUrl);
+            }
           }
   
           User.create({ nombre: displayName, correo: emails[0].value, googleToken: accessToken, refreshToken, tipo: false})
