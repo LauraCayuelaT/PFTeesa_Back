@@ -33,7 +33,8 @@ const addReview = require("../Controllers/addReview");
 const getReviews = require("../Controllers/getReviews");
 const findCartId = require('../Controllers/findCartId');
 const getUserProduct = require("../Controllers/getUserProduct");
-const getUserByID = require("../Controllers/getUserByID")
+const getUserByID = require("../Controllers/getUserByID");
+
 require("../auth")
 
 //Middleware Ruta reviews
@@ -50,9 +51,6 @@ router.use(passport.initialize());
 router.use(passport.session());
 
 
-
-
- 
 
 // TRAE TODOS LOS PRODUCTOS DE LA BASE DE DATOS
 router.get("/products", getAllProducts)
