@@ -51,6 +51,7 @@ router.use(passport.initialize());
 router.use(passport.session());
 
 
+
 // TRAE TODOS LOS PRODUCTOS DE LA BASE DE DATOS
 router.get("/products", getAllProducts)
 
