@@ -13,7 +13,6 @@ const getAllUsers=require("../Controllers/getAllUsers");
 const loginUser=require("../Controllers/loginUser");
 const deleteCarts=require("../Controllers/deleteCarts")
 const updateCarts=require("../Controllers/updateCarts")
-const createCart=require("../Controllers/createCart")
 const createCartGuest=require("../Controllers/createCartGuest")
 const getCart = require("../Controllers/getCart")
 const getCartGuest = require("../Controllers/getCartGuest")
@@ -39,6 +38,7 @@ require("../auth")
 
 //Middleware Ruta reviews
 const reviewUser = require("../middleware/reviewUser")
+const isAuthenticated=require("../middleware/cartUser")
 
 router.use(flash())         
 router.use(session({
@@ -102,7 +102,6 @@ router.use("/google", googleRouter);
 router.use("/auth/google", googleLoginRouter);
 
 //crea un cart, es para que un usuario sin registrarse tenga un CartId 
-router.post("/cartGuest", createCart)
 
 router.post("/cartGuestProducts", createCartGuest)
 
@@ -114,7 +113,7 @@ router.put("/cartGuestProducts/:cartGuestProductId", updateCartGuest)
 
 //agrega a un cart la informacion del producto, pasando por body ProductId, CartId y cantidad de ese producto
 //Proteger si el existe usuario logeado
-router.post("/cart", addCarts)
+router.post("/cart",  addCarts)
 
 //obtiene un cart por usuario con query cartId
 //Proteger si el existe usuario logeado
@@ -126,7 +125,7 @@ router.delete("/cart/:cartProductId", deleteCarts)
 
 //modifica un cart por params cartProductId
 //Proteger si el existe usuario logeado
-router.put("/cart/:cartProductId", updateCarts)
+router.put("/cart/:cartProductId",  updateCarts)
 
 
 
