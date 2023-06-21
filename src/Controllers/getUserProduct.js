@@ -15,11 +15,11 @@ const getUserProduct = async(req,res)=>{
             
             const userReview = await Review.findOne({where:{UserId: userId, ProductId}})
 
-            if(userReview) return res.status(400).json({message: "Usuario ya realizó review"})
+            if(userReview) {return res.status(400).json({message: "Usuario ya realizó review"})}
             
-            return res.status(200).json({message: "Usuario con compra efectiva"})}
+            else {return res.status(200).json({message: "Usuario con compra efectiva"})}}
 
-        res.status(400).json({message:"Usuario no ha comprado este producto"})
+       else { res.status(400).json({message:"Usuario no ha comprado este producto"})}
        
     } catch (error) {
         res.status(500).json({message:error.message})
