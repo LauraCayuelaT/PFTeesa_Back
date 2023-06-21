@@ -15,7 +15,7 @@ const getAllProducts = async(req,res)=>{
             //   };
             condiciones[Op.or] = [
                 { nombre: { [Op.iLike]: `%${nombre}%` } },
-                { marca: { [Op.iLike]: `%${marca}%` } },
+                { marca: { [Op.iLike]: `%${nombre}%` } },
                 { descripcion: { [Op.iLike]: `%${nombre}%` } },
                 { caracteristicas: { [Op.iLike]: `%${nombre}%` } }
             ];
