@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
     fecha:{
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW
+      defaultValue: moment().format("YYYY-MM-DD")
     }
    
   }, {timestamps: false});
