@@ -38,7 +38,14 @@ const addUser=async(req,res)=>{
             return res.status(200).json({usuario, cart})
         }else{
             //Aqui va la lógica para usuario inhabilitado
-            return res.status(400).json({message:"Ya existe un usario con ese correo"})
+            if(!usuario.enable) {
+                usuario.enable=true;
+                await usuario.save();
+                return res.status(400).json({message:"Se reestablecio usuario"})
+            }else{
+                return res.status(400).json({message:"Ya existe un usario con ese correo"})
+            }
+            
         }
 
         
