@@ -49,28 +49,6 @@ router.use(session({
 router.use(passport.initialize());
 router.use(passport.session());
 
-const authenticate = (req, res, next) => {
-  // Aquí puedes agregar tu lógica de autenticación para usuarios registrados
-  // Por ejemplo, verificar si existe un usuario logeado
-  // Si el usuario no está autenticado, puedes redirigirlo a la página de inicio de sesión o enviar una respuesta de error.
-  if (!req.user) {
-    return res.status(401).json({ message: "Unauthorized" });
-  }
-  next();
-};
-
-// Middleware para verificar si el usuario es un invitado (no registrado)
-const checkGuest = (req, res, next) => {
-  // Aquí puedes agregar tu lógica para verificar si el usuario es un invitado
-  // Por ejemplo, puedes verificar si no existe un usuario logeado o si se encuentra en un estado de invitado.
-  if (req.user) {
-    return res.status(403).json({ message: "Forbidden" });
-  }
-  next();
-};
-
-
- 
 
 // TRAE TODOS LOS PRODUCTOS DE LA BASE DE DATOS
 router.get("/products", getAllProducts)
