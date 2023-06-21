@@ -13,6 +13,7 @@ const getAllUsers=require("../Controllers/getAllUsers");
 const loginUser=require("../Controllers/loginUser");
 const deleteCarts=require("../Controllers/deleteCarts")
 const updateCarts=require("../Controllers/updateCarts")
+const createCart=require("../Controllers/createCart")
 const createCartGuest=require("../Controllers/createCartGuest")
 const getCart = require("../Controllers/getCart")
 const getCartGuest = require("../Controllers/getCartGuest")
@@ -20,21 +21,24 @@ const updateCartGuest = require("../Controllers/updateCartGuest")
 const deleteCartGuest = require("../Controllers/deleteCartGuest")
 const addCarts = require("../Controllers/addCarts")
 const updateUser=require("../Controllers/updateUser")
-
 const getCartProducts=require("../Controllers/getCartProducts")
-
 const loginCheck=require ("../Controllers/loginCheck")
 const tokenCheck=require("./tokenCheck")
-
+const handleEnableUser=require("../Controllers/handleEnableUser.js")
 const session = require("express-session");
 const passport = require("passport");
 const flash = require("express-flash");
 const paymentRouter = require("./payment");
 const getAllPurchases = require("../Controllers/getAllPurchases");
-
-
-
+const addReview = require("../Controllers/addReview");
+const getReviews = require("../Controllers/getReviews");
+const findCartId = require('../Controllers/findCartId');
+const getUserProduct = require("../Controllers/getUserProduct");
+const getUserByID = require("../Controllers/getUserByID")
 require("../auth")
+
+//Middleware Ruta reviews
+const reviewUser = require("../middleware/reviewUser")
 
 router.use(flash())         
 router.use(session({
@@ -46,25 +50,7 @@ router.use(passport.initialize());
 router.use(passport.session());
 
 
-const authenticate = (req, res, next) => {
-  // Aquí puedes agregar tu lógica de autenticación para usuarios registrados
-  // Por ejemplo, verificar si existe un usuario logeado
-  // Si el usuario no está autenticado, puedes redirigirlo a la página de inicio de sesión o enviar una respuesta de error.
-  if (!req.user) {
-    return res.status(401).json({ message: "Unauthorized" });
-  }
-  next();
-};
 
-// Middleware para verificar si el usuario es un invitado (no registrado)
-const checkGuest = (req, res, next) => {
-  // Aquí puedes agregar tu lógica para verificar si el usuario es un invitado
-  // Por ejemplo, puedes verificar si no existe un usuario logeado o si se encuentra en un estado de invitado.
-  if (req.user) {
-    return res.status(403).json({ message: "Forbidden" });
-  }
-  next();
-};
 
  
 
@@ -102,6 +88,10 @@ router.post("/login",loginUser)
 //Traer todos los usuarios
 // Protección requerida tipo usuario solo ADMIN
 router.get("/users",getAllUsers)
+router.get("/users/:id", getUserByID)
+
+//BORRADO LOGICO DE USUARIO (falta validar que sea un admin)
+router.put("/enable/:idUser",handleEnableUser)
 
 //Routa protegida para pruebas del token
 router.get("/loginCheck",tokenCheck,loginCheck)
@@ -116,6 +106,7 @@ router.use("/google", googleRouter);
 router.use("/auth/google", googleLoginRouter);
 
 //crea un cart, es para que un usuario sin registrarse tenga un CartId 
+router.post("/cartGuest", createCart)
 
 router.post("/cartGuestProducts", createCartGuest)
 
@@ -145,14 +136,20 @@ router.put("/cart/:cartProductId", updateCarts)
 
 ///////////////SOLO PARA PRUEBAS EN EL BACK////////////////////
 router.get("/cart_products/:idUser", getCartProducts)
+router.get('/cart/:idUser', findCartId)
 
 // MERCADO PAGO
 
 router.use("/mercadopago", paymentRouter)
 
-//Traer todas las compras del usuario
+//-------COMPRAS USUARIO-------//
 
 router.get("/purchase/:id", getAllPurchases)
+
+//------------REVIEWS----------//
+router.post('/reviews/:userId',reviewUser, addReview)
+router.get('/reviews/validate/:userId',getUserProduct)
+router.get('/reviews/:productId', getReviews)
 
 
 
