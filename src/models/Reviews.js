@@ -1,4 +1,5 @@
 const { DataTypes } = require('sequelize');
+const moment = require("moment")
 
 module.exports = (sequelize) => {
   sequelize.define('Review', {
@@ -11,7 +12,7 @@ module.exports = (sequelize) => {
     fecha:{
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW 
+      defaultValue: moment().format("YYYY-MM-DD")
     }
    
   }, {timestamps: false});
