@@ -11,8 +11,6 @@ const addProducts= async (req,res)=>{
     const proExist = await Product.findOne({where:{nombre, ref}});
     console.log(proExist);
     if(proExist) return res.status(400).json({message: "Producto ya existe"})
-    
-
     try{
         const uploadedImages = [];
         for (const imagen of imagenes) {
