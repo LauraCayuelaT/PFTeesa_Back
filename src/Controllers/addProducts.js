@@ -1,5 +1,6 @@
 const { Product } = require("../db")
 const cloudinary = require("../utils/cloudinary");
+const allowedExtensions = ["jpg", "jpeg", "png"];
 
 const addProducts= async (req,res)=>{
 
