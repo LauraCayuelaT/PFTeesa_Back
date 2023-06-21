@@ -3,6 +3,8 @@ const cloudinary = require("../utils/cloudinary");
 
 const addProducts= async (req,res)=>{
 
+    console.log("Esto me llega : "+req.body.imagenes)
+
     const { nombre, tipo, caracteristicas, categoria, imagenes, precio, stock, marca, descripcion, ref, estado } = req.body;
         
 
