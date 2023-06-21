@@ -14,43 +14,27 @@ console.log(req.body)
     if(proExist) return res.status(400).json({message: "Producto ya existe"})
     
 
-    try {
-      // Procesar las imágenes
-      const uploadedImages = [];
-      if (req.files && req.files.imagenes) {
-        for (const imagen of req.files.imagenes) {
-          const fileExtension = imagen.name.split('.').pop().toLowerCase();
-          if (!allowedExtensions.includes(fileExtension)) {
-            return res.status(400).json({ message: "Por favor, selecciona un archivo de imagen en formato JPG o PNG" });
-          }
-          const cloudinaryResponse = await cloudinary.uploader.upload(imagen.tempFilePath, {
-            folder: 'products'
-          });
-          const imageUrl = cloudinaryResponse.secure_url;
-          uploadedImages.push(imageUrl);
-        }
-      }
-  
-      const newProduct = await Product.create({
-        nombre,
-        tipo,
-        caracteristicas,
-        categoria,
-        imagenes: uploadedImages,
-        precio,
-        stock,
-        marca,
-        descripcion,
-        ref,
-        estado
+    try{
+        const uploadedImages = [];
+        for (const imagen of imagenes) {
+            const fileExtension = imagen.split('.').pop().toLowerCase();
+            if (!allowedExtensions.includes(fileExtension)) {
+              return res.status(400).json({ message: "Por favor, selecciona un archivo de imagen en formato JPG o PNG" });
+            }
+            const cloudinaryResponse = await cloudinary.uploader.upload(imagen, {
+        folder: 'products'
       });
-  
-      res.status(200).json(newProduct);
-    } catch (err) {
-      res.status(500).json({ message: "Ocurrió un error al agregar el producto" });
+      const imageUrl = cloudinaryResponse.secure_url;
+      uploadedImages.push(imageUrl);
     }
-  };
-  
-  module.exports = {
-    addProducts
-  };
+    const newProduct = await Product.create({nombre, tipo, caracteristicas, categoria, imagenes:uploadedImages, precio, stock, marca, descripcion, ref, estado})
+    res.status(200).json(newProduct)
+    }catch(err){res.status(404).json({message: "Llegue al catch del post de productos "+ err.message})}
+
+
+
+
+
+}
+
+module.exports = addProducts;
