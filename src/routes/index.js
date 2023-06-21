@@ -117,19 +117,19 @@ router.put("/cartGuestProducts/:cartGuestProductId", updateCartGuest)
 
 //agrega a un cart la informacion del producto, pasando por body ProductId, CartId y cantidad de ese producto
 //Proteger si el existe usuario logeado
-router.post("/cart", isAuthenticated, addCarts)
+router.post("/cart",  addCarts)
 
 //obtiene un cart por usuario con query cartId
 //Proteger si el existe usuario logeado
-router.get("/cart",isAuthenticated, getCart)
+router.get("/cart", getCart)
 
 //borra un cart por params cartProductId
 //Proteger si el existe usuario logeado
-router.delete("/cart/:cartProductId", isAuthenticated,deleteCarts)
+router.delete("/cart/:cartProductId", deleteCarts)
 
 //modifica un cart por params cartProductId
 //Proteger si el existe usuario logeado
-router.put("/cart/:cartProductId", isAuthenticated, updateCarts)
+router.put("/cart/:cartProductId",  updateCarts)
 
 
 
