@@ -21,9 +21,9 @@ const addProducts= async (req,res)=>{
         const uploadedImages = [];
         for (const imagen of imagenes) {
             const fileExtension = imagen.split('.').pop().toLowerCase();
-            if (!allowedExtensions.includes(fileExtension)) {
-              return res.status(400).json({ message: "Por favor, selecciona un archivo de imagen en formato JPG o PNG" });
-            }
+            // if (!allowedExtensions.includes(fileExtension)) {
+            //   return res.status(400).json({ message: "Por favor, selecciona un archivo de imagen en formato JPG o PNG" });
+            // }
             const cloudinaryResponse = await cloudinary.uploader.upload(imagen, {
         folder: 'products'
       });
