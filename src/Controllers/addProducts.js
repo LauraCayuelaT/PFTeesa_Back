@@ -20,7 +20,7 @@ const addProducts= async (req,res)=>{
     try{
         const uploadedImages = [];
         for (const imagen of imagenes) {
-            const fileExtension = imagen.split('.').pop().toLowerCase();
+            //const fileExtension = imagen.split('.').pop().toLowerCase();
             // if (!allowedExtensions.includes(fileExtension)) {
             //   return res.status(400).json({ message: "Por favor, selecciona un archivo de imagen en formato JPG o PNG" });
             // }
