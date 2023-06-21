@@ -1,5 +1,6 @@
 const { Product } = require("../db")
 const uuidRegExp = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const cloudinary = require("../utils/cloudinary");
 
 const updateProduct=async(req,res)=>{
 
@@ -9,11 +10,24 @@ const updateProduct=async(req,res)=>{
     const { imagenes, precio, stock } = req.body;
 
     try {
+        const uploadedImages = [];
+        if(imagenes){
+
+        for (const imagen of imagenes) {
+         const cloudinaryResponse = await cloudinary.uploader.upload(imagen, {
+         folder: 'products'
+         });
+
+        const imageUrl = cloudinaryResponse.secure_url;
+        uploadedImages.push(imageUrl);
+         }
+        }
+
         const product= await Product.findOne({ where: { id: idProduct } });
 
         if(product){
             
-            product.imagenes = imagenes? imagenes : product.imagenes;
+            product.imagenes = imagenes? uploadedImages : product.imagenes;
             product.precio = precio? precio:product.precio;
             product.stock = stock? stock: product.stock;
             
