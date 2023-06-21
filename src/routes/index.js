@@ -13,7 +13,6 @@ const getAllUsers=require("../Controllers/getAllUsers");
 const loginUser=require("../Controllers/loginUser");
 const deleteCarts=require("../Controllers/deleteCarts")
 const updateCarts=require("../Controllers/updateCarts")
-const createCart=require("../Controllers/createCart")
 const createCartGuest=require("../Controllers/createCartGuest")
 const getCart = require("../Controllers/getCart")
 const getCartGuest = require("../Controllers/getCartGuest")
@@ -21,24 +20,21 @@ const updateCartGuest = require("../Controllers/updateCartGuest")
 const deleteCartGuest = require("../Controllers/deleteCartGuest")
 const addCarts = require("../Controllers/addCarts")
 const updateUser=require("../Controllers/updateUser")
+
 const getCartProducts=require("../Controllers/getCartProducts")
+
 const loginCheck=require ("../Controllers/loginCheck")
 const tokenCheck=require("./tokenCheck")
-const handleEnableUser=require("../Controllers/handleEnableUser.js")
+
 const session = require("express-session");
 const passport = require("passport");
 const flash = require("express-flash");
 const paymentRouter = require("./payment");
 const getAllPurchases = require("../Controllers/getAllPurchases");
-const addReview = require("../Controllers/addReview");
-const getReviews = require("../Controllers/getReviews");
-const findCartId = require('../Controllers/findCartId');
-const getUserProduct = require("../Controllers/getUserProduct");
-const getUserByID = require("../Controllers/getUserByID")
-require("../auth")
 
-//Middleware Ruta reviews
-const reviewUser = require("../middleware/reviewUser")
+
+
+require("../auth")
 
 router.use(flash())         
 router.use(session({
@@ -48,6 +44,7 @@ router.use(session({
 }));;
 router.use(passport.initialize());
 router.use(passport.session());
+
 
 const authenticate = (req, res, next) => {
   // Aquí puedes agregar tu lógica de autenticación para usuarios registrados
@@ -106,10 +103,6 @@ router.post("/login",loginUser)
 //Traer todos los usuarios
 // Protección requerida tipo usuario solo ADMIN
 router.get("/users",getAllUsers)
-router.get("/users/:id", getUserByID)
-
-//BORRADO LOGICO DE USUARIO (falta validar que sea un admin)
-router.put("/enable/:idUser",handleEnableUser)
 
 //Routa protegida para pruebas del token
 router.get("/loginCheck",tokenCheck,loginCheck)
@@ -124,7 +117,6 @@ router.use("/google", googleRouter);
 router.use("/auth/google", googleLoginRouter);
 
 //crea un cart, es para que un usuario sin registrarse tenga un CartId 
-router.post("/cartGuest", createCart)
 
 router.post("/cartGuestProducts", createCartGuest)
 
@@ -154,20 +146,14 @@ router.put("/cart/:cartProductId", updateCarts)
 
 ///////////////SOLO PARA PRUEBAS EN EL BACK////////////////////
 router.get("/cart_products/:idUser", getCartProducts)
-router.get('/cart/:idUser', findCartId)
 
 // MERCADO PAGO
 
 router.use("/mercadopago", paymentRouter)
 
-//-------COMPRAS USUARIO-------//
+//Traer todas las compras del usuario
 
 router.get("/purchase/:id", getAllPurchases)
-
-//------------REVIEWS----------//
-router.post('/reviews/:userId',reviewUser, addReview)
-router.get('/reviews/validate/:userId',getUserProduct)
-router.get('/reviews/:productId', getReviews)
 
 
 

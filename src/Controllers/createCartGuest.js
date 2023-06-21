@@ -1,15 +1,11 @@
-const { CartGuest, CartGuestProducts, Product } = require('../db');
+const { CartGuestProducts, Product } = require('../db');
 
 const createCartGuest = async(req,res)=>{
     try {
-        const { CartGuestId, ProductId, cantidad} = req.body;
+        const { ProductId, cantidad} = req.body;
         
     
         // Verificar si el carrito existe
-        const cartGuest = await CartGuest.findByPk(CartGuestId);
-        if (!cartGuest) {
-          return res.status(404).json({ error: 'Carrito no encontrado' });
-        }
     
         // Verificar si el producto existe
         const product = await Product.findByPk(ProductId);
@@ -20,7 +16,6 @@ const createCartGuest = async(req,res)=>{
         // Crear o actualizar el registro en la tabla CartProducts
         let cartGuestProduct = await CartGuestProducts.findOne({
           where: {
-            CartGuestId,
             ProductId,
           },
         });
@@ -33,7 +28,6 @@ const createCartGuest = async(req,res)=>{
         } else {
           // Si el producto no está en el carrito, crear un nuevo registro
           cartGuestProduct = await CartGuestProducts.create({
-            CartGuestId,
             ProductId,
             cantidad,
             precioTotal
