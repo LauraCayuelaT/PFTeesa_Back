@@ -8,7 +8,7 @@ const isAuthenticated = async (req, res, next) => {
     }
 
     // El usuario no está autenticado, se redirige a la página de inicio de sesión o se envía una respuesta de acceso no autorizado
-    res.status(401).json({ message: "Acceso no autorizado" });// O res.status(401).json({ message: "Acceso no autorizado" });
+    res.status(401).json({ message: "Acceso no autorizado" })
   } catch (error) {
     console.log("Error en el middleware:", error);
     res.status(500).json({ message: error.message });
