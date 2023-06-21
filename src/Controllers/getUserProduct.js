@@ -1,4 +1,4 @@
-const {Purchased} = require("../db")
+const {Purchased, Review} = require("../db")
 
 
 const getUserProduct = async(req,res)=>{
@@ -11,9 +11,15 @@ const getUserProduct = async(req,res)=>{
             ProductId
         }})
 
-        if(existingUser) return res.status(200).json({message: "Usuario con compra efectiva"})
+        if(existingUser) {
+            
+            const userReview = await Review.findOne({where:{UserId: userId, ProductId}})
 
-        res.status(400).json({message:"Usuario no ha comprado este producto"})
+            if(userReview) {return res.status(400).json({message: "Usuario ya realizó review"})}
+            
+            else {return res.status(200).json({message: "Usuario con compra efectiva"})}}
+
+       else { res.status(400).json({message:"Usuario no ha comprado este producto"})}
        
     } catch (error) {
         res.status(500).json({message:error.message})

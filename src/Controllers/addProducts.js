@@ -1,13 +1,14 @@
 const { Product } = require("../db")
 const cloudinary = require("../utils/cloudinary");
+const allowedExtensions = ["jpg", "jpeg", "png"];
 
 const addProducts= async (req,res)=>{
 
-    
 
     const { nombre, tipo, caracteristicas, categoria, imagenes, precio, stock, marca, descripcion, ref, estado } = req.body;
         
     //console.log("Esto me llega : "+req.file)
+
 
     if(!nombre || !imagenes || !precio || !marca || !ref) return res.status(404).json({message: "Faltan datos"})
 
@@ -32,10 +33,6 @@ const addProducts= async (req,res)=>{
     const newProduct = await Product.create({nombre, tipo, caracteristicas, categoria, imagenes:uploadedImages, precio, stock, marca, descripcion, ref, estado})
     res.status(200).json(newProduct)
     }catch(err){res.status(404).json({message: "Llegue al catch del post de productos "+ err.message})}
-
-
-
-
 
 }
 
