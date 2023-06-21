@@ -4,7 +4,7 @@ const getCartGuest = async (req, res) => {
   const {userId}=req.params
   try {
    
-    const cartGuestProducts = await CartGuestProducts.findByPk({
+    const cartGuestProducts = await CartGuestProducts.findAll({
       include: {
         model: Product,
         attributes: ['id', 'nombre', 'precio', 'descripcion', 'imagenes', 'categoria', 'marca', 'ref' ], 
