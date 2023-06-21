@@ -3,10 +3,13 @@ const cloudinary = require("../utils/cloudinary");
 const allowedExtensions = ["jpg", "jpeg", "png"];
 
 const addProducts= async (req,res)=>{
-  console.log("Esto me llega : "+req.body.imagenes)
+
+
     const { nombre, tipo, caracteristicas, categoria, imagenes, precio, stock, marca, descripcion, ref, estado } = req.body;
         
-console.log(req.body)
+    //console.log("Esto me llega : "+req.file)
+
+
     if(!nombre || !imagenes || !precio || !marca || !ref) return res.status(404).json({message: "Faltan datos"})
 
     const proExist = await Product.findOne({where:{nombre, ref}});
