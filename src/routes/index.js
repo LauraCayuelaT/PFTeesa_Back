@@ -40,7 +40,8 @@ require("../auth")
 
 //Middleware Ruta reviews
 const reviewUser = require("../middleware/reviewUser")
-const isAuthenticated=require("../middleware/cartUser")
+const isAuthenticated=require("../middleware/cartUser");
+const isAdmin = require("../middleware/isAdmin")
 
 router.use(flash())         
 router.use(session({
@@ -65,11 +66,11 @@ router.post("/products", addProducts)
 
 //ELIMINA UN PRODUCTO SEGUN SU ID
 // Protección requerida tipo usuario solo ADMIN
-router.delete("/products/:idProduct",deleteProduct)
+router.delete("/products/:idProduct",isAdmin,deleteProduct)   
 
 //MODIFICA LOS VALORES DE UN PRODUCTO GUARDADO
 // Protección requerida tipo usuario solo ADMIN
-router.put("/detail/:idProduct",updateProduct)
+router.put("/detail/:idProduct",isAdmin,updateProduct)
 
 //TRAE TODAS LAS MARCAS 
 router.get("/brands", getBrands)
@@ -107,11 +108,8 @@ router.use("/auth/google", googleLoginRouter);
 //crea un cart, es para que un usuario sin registrarse tenga un CartId 
 
 router.post("/cartGuestProducts", createCartGuest)
-
 router.get("/cartGuestProducts", getCartGuest)
-
 router.delete("/cartGuestProducts/:cartGuestProductId", deleteCartGuest)
-
 router.put("/cartGuestProducts/:cartGuestProductId", updateCartGuest)
 
 //agrega a un cart la informacion del producto, pasando por body ProductId, CartId y cantidad de ese producto
