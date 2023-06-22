@@ -30,7 +30,7 @@ const updateProduct=async(req,res)=>{
             
             product.imagenes = imagenes.length? uploadedImages : product.imagenes;
             product.precio = precio? precio:product.precio;
-            product.stock = stock===""? stock: product.stock;
+            product.stock = stock!==""? stock: product.stock;
             
             const updatedProduct = await product.save();
 
