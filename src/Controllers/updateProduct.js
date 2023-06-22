@@ -28,7 +28,7 @@ const updateProduct=async(req,res)=>{
 
         if(product){
             
-            product.imagenes = imagenes? uploadedImages : product.imagenes;
+            product.imagenes = imagenes.length? uploadedImages : product.imagenes;
             product.precio = precio? precio:product.precio;
             product.stock = stock? stock: product.stock;
             
