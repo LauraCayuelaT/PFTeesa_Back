@@ -8,10 +8,11 @@ const updateProduct=async(req,res)=>{
     if(!uuidRegExp.test(idProduct)) return res.status(400).json({message: "Id invalido"}) //Validacion de uuid
 
     const { imagenes, precio, stock } = req.body;
+  
 
     try {
         const uploadedImages = [];
-        if(imagenes){
+        if(imagenes.length>0){
 
         for (const imagen of imagenes) {
          const cloudinaryResponse = await cloudinary.uploader.upload(imagen, {
@@ -27,7 +28,7 @@ const updateProduct=async(req,res)=>{
 
         if(product){
             
-            product.imagenes = imagenes? uploadedImages : product.imagenes;
+            product.imagenes = imagenes.length? uploadedImages : product.imagenes;
             product.precio = precio? precio:product.precio;
             product.stock = stock? stock: product.stock;
             
