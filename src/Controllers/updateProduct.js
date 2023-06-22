@@ -11,7 +11,7 @@ const updateProduct=async(req,res)=>{
   
 
     try {
-        const uploadedImages = [];
+        let uploadedImages = [];
         if(imagenes.length>0){
 
         for (const imagen of imagenes) {
@@ -33,6 +33,8 @@ const updateProduct=async(req,res)=>{
             product.stock = stock? stock: product.stock;
             
             const updatedProduct = await product.save();
+
+            uploadedImages = [];
             res.status(200).json(updatedProduct)
         }else{
             res.status(404).json({message:"Id no encontrado"})
