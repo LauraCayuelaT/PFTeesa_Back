@@ -7,11 +7,16 @@ const updateProduct=async(req,res)=>{
     const {idProduct}=req.params
     if(!uuidRegExp.test(idProduct)) return res.status(400).json({message: "Id invalido"}) //Validacion de uuid
 
+<<<<<<< HEAD
     const {  imagenes, precio, stock} = req.body;
+=======
+    const { imagenes, precio, stock } = req.body;
+  
+>>>>>>> 7fc0a2b5f94948b7d6fd44270fce4a3a8cbbf5ed
 
     try {
-        const uploadedImages = [];
-        if(imagenes){
+        let uploadedImages = [];
+        if(imagenes.length>0){
 
         for (const imagen of imagenes) {
          const cloudinaryResponse = await cloudinary.uploader.upload(imagen, {
@@ -27,11 +32,13 @@ const updateProduct=async(req,res)=>{
 
         if(product){
             
-            product.imagenes = imagenes? uploadedImages : product.imagenes;
+            product.imagenes = imagenes.length? uploadedImages : product.imagenes;
             product.precio = precio? precio:product.precio;
-            product.stock = stock? stock: product.stock;
+            product.stock = stock!==""? stock: product.stock;
             
             const updatedProduct = await product.save();
+
+            uploadedImages = [];
             res.status(200).json(updatedProduct)
         }else{
             res.status(404).json({message:"Id no encontrado"})
