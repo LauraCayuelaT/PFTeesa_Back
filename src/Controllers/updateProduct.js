@@ -7,12 +7,8 @@ const updateProduct=async(req,res)=>{
     const {idProduct}=req.params
     if(!uuidRegExp.test(idProduct)) return res.status(400).json({message: "Id invalido"}) //Validacion de uuid
 
-<<<<<<< HEAD
-    const {  imagenes, precio, stock} = req.body;
-=======
     const { imagenes, precio, stock } = req.body;
   
->>>>>>> 7fc0a2b5f94948b7d6fd44270fce4a3a8cbbf5ed
 
     try {
         let uploadedImages = [];
