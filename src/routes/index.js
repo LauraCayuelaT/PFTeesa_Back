@@ -66,11 +66,11 @@ router.post("/products", addProducts)
 
 //ELIMINA UN PRODUCTO SEGUN SU ID
 // Protección requerida tipo usuario solo ADMIN
-router.delete("/products/:idProduct",isAdmin,deleteProduct)   
+router.delete("/products/:idProduct",deleteProduct)   //elimino proteccion isAdmin
 
 //MODIFICA LOS VALORES DE UN PRODUCTO GUARDADO
 // Protección requerida tipo usuario solo ADMIN
-router.put("/detail/:idProduct",isAdmin,updateProduct)
+router.put("/detail/:idProduct",updateProduct) //elimino proteccion isAdmin
 
 //TRAE TODAS LAS MARCAS 
 router.get("/brands", getBrands)
