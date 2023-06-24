@@ -34,7 +34,8 @@ const getReviews = require("../Controllers/getReviews");
 const findCartId = require('../Controllers/findCartId');
 const getUserProduct = require("../Controllers/getUserProduct");
 const getUserByID = require("../Controllers/getUserByID");
-const updatePurchase = require("../Controllers/updatePurchase")
+const updatePurchase = require("../Controllers/updatePurchase");
+const purchaseChart = require("../Controllers/purchaseChart")
 
 require("../auth")
 
@@ -141,7 +142,8 @@ router.use("/mercadopago", paymentRouter)
 //-------COMPRAS USUARIO-------//
 
 router.get("/purchase/:id", getAllPurchases)
-router.put('/puchase/:id', updatePurchase)
+router.put('/purchase/:id', updatePurchase);
+router.get('/purchase', purchaseChart)
 
 //------------REVIEWS----------//
 router.post('/reviews/:userId',reviewUser, addReview)
